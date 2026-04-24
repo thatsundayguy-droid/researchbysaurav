@@ -183,19 +183,10 @@
   <div class="nav-links" id="nav-links"></div>
 </nav>
 <script>
-  fetch('pages.json')
-    .then(r => r.json())
-    .then(pages => {
-      const current = location.pathname.split('/').pop() || 'Index.html';
-      const container = document.getElementById('nav-links');
-      container.innerHTML = pages.map(p =>
-        `<a href="${p.file}" class="nav-link${current === p.file ? ' active' : ''}">${p.emoji} ${p.title}</a>`
-      ).join('');
-    })
-    .catch(() => {
-      document.getElementById('nav-links').innerHTML =
-        '<a href="Research.html" class="nav-link active">📋 Industry Research </a>';
-    });
+  document.getElementById('nav-links').innerHTML =
+    '<a href="Summary.html" class="nav-link">📊 Summary</a>' +
+    '<a href="Index.html" class="nav-link active">🌿 Indian Fertilizer Market</a>' +
+    '<a href="Research.html" class="nav-link">📋 Detailed Report</a>';
 </script>
 
 <!-- ══ HERO ══ -->

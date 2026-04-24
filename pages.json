@@ -1,6 +1,5 @@
 [
- 	{ "title": "Summary", "file": "Summary.html"}  
-	{ "title": "Indian Fertilizer Market", "file": "Index.html"},
-  	{ "title": "Detailed Report", "file": "Research.html"},
- 
+  { "title": "Summary", "file": "Summary.html", "emoji": "📊" },
+  { "title": "Indian Fertilizer Market", "file": "Index.html", "emoji": "🌿" },
+  { "title": "Detailed Report", "file": "Research.html", "emoji": "📋" }
 ]
