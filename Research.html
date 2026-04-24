@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Fertilizer Market — Sector Intelligence Report 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1816;
+    --ink-mid: #3d3a36;
+    --ink-muted: #7a7570;
+    --ink-faint: #b8b4ae;
+    --rule: #d4cfc9;
+    --rule-strong: #8a8580;
+    --bg: #f7f4ef;
+    --bg-warm: #ede9e2;
+    --bg-card: #ffffff;
+    --accent: #2e5b3c;
+    --accent-dark: #1e3d29;
+    --accent-light: #e8f0eb;
+    --accent2: #7a3b1e;
+    --accent2-light: #f5ece7;
+    --accent3: #1e3d6b;
+    --accent3-light: #e8eef5;
+    --gold: #b08d3a;
+    --gold-light: #f7f0e0;
+    --serif: 'Playfair Display', Georgia, serif;
+    --body: 'Source Serif 4', Georgia, serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  html { font-size: 16px; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5rem 7rem 4rem;
+    background: var(--accent-dark);
+    color: #f0ece4;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 48px,
+      rgba(255,255,255,0.03) 48px,
+      rgba(255,255,255,0.03) 49px
+    );
+  }
+  .cover-top { position: relative; z-index: 1; }
+  .cover-label {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.55);
+    margin-bottom: 3.5rem;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: 3.6rem;
+    font-weight: 700;
+    line-height: 1.1;
+    max-width: 640px;
+    color: #f0ece4;
+  }
+  .cover h1 em {
+    font-style: italic;
+    color: #a8c8b2;
+  }
+  .cover-sub {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(240,236,228,0.7);
+    max-width: 500px;
+    line-height: 1.6;
+  }
+  .cover-bottom {
+    position: relative;
+    z-index: 1;
+    border-top: 0.5px solid rgba(240,236,228,0.2);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cover-meta { font-size: 0.8rem; color: rgba(240,236,228,0.45); font-family: var(--mono); line-height: 1.8; }
+  .cover-stats { display: flex; gap: 3rem; }
+  .cover-stat { text-align: right; }
+  .cover-stat-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: #a8c8b2; }
+  .cover-stat-lbl { font-size: 0.7rem; font-family: var(--mono); letter-spacing: 0.1em; color: rgba(240,236,228,0.45); text-transform: uppercase; }
+
+  /* ── MAIN ── */
+  main { max-width: 900px; margin: 0 auto; padding: 5rem 3rem; }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    border: 0.5px solid var(--rule);
+    padding: 2.5rem 3rem;
+    margin-bottom: 5rem;
+    background: var(--bg-card);
+  }
+  .toc-title {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 1.5rem;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+    padding: 0.35rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    font-size: 0.92rem;
+  }
+  .toc-list li:last-child { border-bottom: none; }
+  .toc-num {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    min-width: 2rem;
+    font-weight: 500;
+  }
+  .toc-dot { flex: 1; border-bottom: 0.5px dotted var(--rule); margin: 0 0.5rem; position: relative; top: -4px; }
+  .toc-pg { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-muted); }
+
+  /* ── SECTION ── */
+  section { margin-bottom: 5rem; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--ink);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── TYPOGRAPHY ── */
+  p { margin-bottom: 1.2rem; font-size: 0.97rem; color: var(--ink-mid); }
+  p:last-child { margin-bottom: 0; }
+
+  h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  /* ── STAT GRID ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 0.5px solid var(--rule);
+    margin: 2rem 0;
+  }
+  .stat-cell {
+    background: var(--bg-card);
+    padding: 1.5rem 1.75rem;
+  }
+  .stat-value {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-dark);
+    line-height: 1;
+  }
+  .stat-unit {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-left: 3px;
+  }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 0.4rem;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--accent-light);
+  }
+  .pull-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--accent-dark);
+    margin: 0;
+  }
+
+  /* ── DATA TABLE ── */
+  .data-table-wrap { overflow-x: auto; margin: 2rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  thead tr { background: var(--ink); color: #f0ece4; }
+  thead th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  tbody tr { border-bottom: 0.5px solid var(--rule); }
+  tbody tr:nth-child(even) { background: var(--bg); }
+  tbody td { padding: 0.65rem 1rem; color: var(--ink-mid); }
+  tbody td:first-child { font-weight: 400; color: var(--ink); }
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .tag-green { background: var(--accent-light); color: var(--accent-dark); }
+  .tag-amber { background: var(--gold-light); color: var(--gold); }
+  .tag-red { background: var(--accent2-light); color: var(--accent2); }
+  .tag-blue { background: var(--accent3-light); color: var(--accent3); }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    border: 0.5px solid var(--rule);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    background: var(--bg-card);
+    position: relative;
+  }
+  .info-box-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  /* ── TWO COL ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+  @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── CARD ── */
+  .card {
+    border: 0.5px solid var(--rule);
+    padding: 1.5rem;
+    background: var(--bg-card);
+  }
+  .card-title {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  /* ── SUBSIDY FLOW ── */
+  .flow-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 2rem 0;
+    font-size: 0.82rem;
+  }
+  .flow-box {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    border: 0.5px solid var(--rule);
+    background: var(--bg-card);
+  }
+  .flow-box strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--ink);
+  }
+  .flow-box span { font-size: 0.75rem; color: var(--ink-muted); }
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+  .flow-box.highlight {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+  .flow-box.highlight strong, .flow-box.highlight span { color: #f0ece4; }
+
+  /* ── RISK GRID ── */
+  .risk-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    align-items: flex-start;
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-faint);
+    min-width: 1.5rem;
+    padding-top: 3px;
+  }
+  .risk-body h4 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .risk-body p { font-size: 0.86rem; margin: 0; }
+
+  /* ── HORIZON ── */
+  .horizon-band {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+    border: 0.5px solid var(--rule);
+    margin-bottom: -0.5px;
+    background: var(--bg-card);
+  }
+  .horizon-label {
+    background: var(--ink);
+    color: #f0ece4;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.75rem;
+    text-align: center;
+    line-height: 1.4;
+  }
+  .horizon-label.near { background: var(--accent-dark); }
+  .horizon-label.mid { background: var(--accent); }
+  .horizon-label.long { background: var(--ink-muted); }
+  .horizon-content { padding: 1rem 1.5rem; font-size: 0.86rem; color: var(--ink-mid); }
+  .horizon-content ul { padding-left: 1rem; }
+  .horizon-content li { margin-bottom: 0.3rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 5rem;
+    border-top: 1px solid var(--ink);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
+
+  /* ── CHART WRAPPER ── */
+  .chart-wrap { position: relative; width: 100%; margin: 2rem 0; }
+
+  /* ── IMPORT FLAG ── */
+  .import-bar-wrap { margin: 2rem 0; }
+  .import-bar-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; font-size: 0.82rem; }
+  .import-bar-label { min-width: 100px; color: var(--ink); font-weight: 400; }
+  .import-bar-track { flex: 1; background: var(--bg-warm); height: 20px; position: relative; }
+  .import-bar-fill { height: 100%; }
+  .import-bar-pct { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-muted); min-width: 40px; text-align: right; }
+
+  /* ── PLAYER CARD ── */
+  .player-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: var(--rule); border: 0.5px solid var(--rule); margin: 2rem 0; }
+  .player-cell { background: var(--bg-card); padding: 1.25rem 1.5rem; }
+  .player-name { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+  .player-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .player-note { font-size: 0.78rem; color: var(--ink-muted); line-height: 1.5; }
+
+  /* ── HIGHLIGHT BAR ── */
+  .highlight-bar {
+    background: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-size: 0.86rem;
+    color: var(--ink-mid);
+  }
+  .highlight-bar strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="cover-top">
+    <p class="cover-label">Sector Intelligence Report &nbsp;·&nbsp; &nbsp; India Agriculture Market</p>
+    <h1>The <em>Indian</em><br>Fertilizer Market:<br>A Comprehensive<br>Overview</h1>
+    <p class="cover-sub">An analytical assessment of market structure, regulatory architecture, competitive dynamics, import vulnerabilities, and strategic horizons for the Indian fertilizer sector.</p>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-meta">
+      Prepared for internal reference<br>
+      Sources: Ministry of Chemicals &amp; Fertilizers,<br>
+      IMARC Group, Mordor Intelligence, PIB India
+    </div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">₹1,021 Bn</div>
+        <div class="cover-stat-lbl">Market Size 2025</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">4.2%</div>
+        <div class="cover-stat-lbl">CAGR 2025–30</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">#2</div>
+        <div class="cover-stat-lbl">Global Consumer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN BODY -->
+<main>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ul class="toc-list">
+      <li><span class="toc-num">01</span>Executive Summary<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">02</span>Market Size &amp; Growth Trajectory<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">03</span>Product Landscape &amp; Demand Composition<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">04</span>Regulatory Architecture &amp; Subsidy Framework<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">05</span>Import Dependency &amp; Supply Chain Vulnerabilities<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">06</span>Competitive Landscape &amp; Key Players<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">07</span>Technology Disruption: Nano-Fertilizers &amp; Sustainability<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">08</span>Key Risks &amp; Structural Challenges<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+      <li><span class="toc-num">09</span>Strategic Outlook &amp; Investment Considerations<span class="toc-dot"></span><span class="toc-pg">—</span></li>
+    </ul>
+  </div>
+
+  <!-- SECTION 01 -->
+  <section id="s01">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Executive Summary</h2>
+    </div>
+    <p>India's fertilizer sector occupies a position of extraordinary strategic significance within the national economy. As the world's second-largest consumer of fertilizers after China, India deploys approximately 41.8 million metric tonnes of fertilizer annually to sustain an agricultural system that feeds over 1.4 billion people and contributes meaningfully to the nation's GDP. The sector is fundamentally shaped by the intersection of agronomic necessity, fiscal policy, and geopolitical exposure — a combination that renders it both indispensable and structurally complex.</p>
+    <p>The market was valued at approximately ₹1,021 billion in 2025 and is projected to reach ₹1,433 billion by 2034, growing at a compound annual rate of 3.8 to 4.2 percent. Growth is driven by expanding food demand, government-led agricultural modernization, and an accelerating transition toward balanced and sustainable nutrient management. However, the sector's foundational architecture — characterized by price controls on urea, subsidy-induced distortions, and significant raw material import dependence — creates persistent structural challenges that any informed analyst or stakeholder must understand in depth.</p>
+
+    <div class="pull-quote">
+      <p>Urea has not seen a retail price increase since 2018, yet continues to account for the largest share of India's fertilizer subsidy burden — exceeding ₹2.55 trillion in fiscal year 2022–23 alone at peak. This policy rigidity lies at the heart of the sector's structural imbalances.</p>
+    </div>
+
+    <p>The government's dual imperative — ensuring farmer affordability while rationalizing fiscal expenditure — has produced a policy architecture of considerable nuance, with the Nutrient-Based Subsidy (NBS) scheme governing phosphatic and potassic fertilizers, while urea remains separately controlled. Simultaneously, the emergence of nano-fertilizers, particularly IFFCO's nano-urea and nano-DAP, represents a potential technological inflection point that could materially reshape both demand patterns and subsidy obligations over the next decade.</p>
+  </section>
+
+  <!-- SECTION 02 -->
+  <section id="s02">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Market Size &amp; Growth Trajectory</h2>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-value">₹1,021<span class="stat-unit">Bn</span></div>
+        <div class="stat-label">Market Value, 2025</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">₹1,433<span class="stat-unit">Bn</span></div>
+        <div class="stat-label">Projected Value, 2034</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">3.8–4.2<span class="stat-unit">%</span></div>
+        <div class="stat-label">CAGR 2025–2034</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">41.8<span class="stat-unit">MT</span></div>
+        <div class="stat-label">Annual Production, 2024</div>
+      </div>
+    </div>
+
+    <p>The Indian fertilizer market has demonstrated consistent, if measured, growth over the preceding decade. Production and consumption volumes have expanded in tandem with India's agricultural output, which now stands at approximately 329.7 million tonnes of grain annually — positioning the country among the world's foremost agricultural producers.</p>
+
+    <p>Geographically, the market exhibits pronounced regional concentration. North India commands the dominant share — approximately 33 percent as of 2025 — driven by the intensive cereal cultivation of Punjab, Uttar Pradesh, and Haryana. These states were the primary beneficiaries of the Green Revolution and continue to operate the most fertilizer-intensive farming systems in the subcontinent. Uttar Pradesh, in particular, is identified as the fastest-growing regional market, supported by its substantial agricultural land base, large farming population, and ongoing state-level infrastructure investment.</p>
+
+    <p>By application, farming activities dominate with a 95 percent share, reflecting the sector's near-total orientation toward food crop production — principally rice, wheat, sugarcane, and vegetables. Non-agricultural applications, including horticulture and plantation crops, account for the residual balance, though the horticulture segment is projected to grow at a higher rate of 6.5 percent CAGR through 2030, reflecting dietary diversification and rising incomes.</p>
+  </section>
+
+  <!-- SECTION 03 -->
+  <section id="s03">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Product Landscape &amp; Demand Composition</h2>
+    </div>
+
+    <p>India's fertilizer demand is dominated by chemical fertilizers, which held an 83 percent market share in 2025. Within this category, three product types warrant particular attention: urea, di-ammonium phosphate (DAP), and NPK complex fertilizers. Each occupies a distinct position in the regulatory and agronomic framework.</p>
+
+    <div class="data-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Primary Nutrient</th>
+            <th>Regulatory Status</th>
+            <th>Subsidy Mechanism</th>
+            <th>Demand Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Urea</td>
+            <td>Nitrogen (N)</td>
+            <td>Price-controlled</td>
+            <td>Urea Subsidy Scheme</td>
+            <td><span class="tag tag-amber">Excess Demand</span></td>
+          </tr>
+          <tr>
+            <td>Di-Ammonium Phosphate (DAP)</td>
+            <td>N, Phosphorus (P)</td>
+            <td>Decontrolled / NBS</td>
+            <td>NBS + Special ₹3,500/MT</td>
+            <td><span class="tag tag-green">Stable</span></td>
+          </tr>
+          <tr>
+            <td>Muriate of Potash (MOP)</td>
+            <td>Potassium (K)</td>
+            <td>Decontrolled / NBS</td>
+            <td>NBS rates</td>
+            <td><span class="tag tag-red">Underutilised</span></td>
+          </tr>
+          <tr>
+            <td>NPK Complex</td>
+            <td>N, P, K blend</td>
+            <td>Decontrolled / NBS</td>
+            <td>NBS rates per nutrient</td>
+            <td><span class="tag tag-green">Growing</span></td>
+          </tr>
+          <tr>
+            <td>Single Super Phosphate (SSP)</td>
+            <td>Phosphorus, Sulphur</td>
+            <td>Decontrolled / NBS</td>
+            <td>NBS rates</td>
+            <td><span class="tag tag-blue">Niche</span></td>
+          </tr>
+          <tr>
+            <td>Nano-Urea / Nano-DAP</td>
+            <td>N / N+P (nano)</td>
+            <td>Emerging / FCO-approved</td>
+            <td>Partial subsidy / promotion</td>
+            <td><span class="tag tag-green">Rapidly Growing</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The N:P:K Imbalance Problem</h3>
+    <p>A fundamental structural challenge in India's fertilizer consumption is the severe imbalance in the application ratio of the three primary macronutrients — nitrogen (N), phosphorus (P), and potassium (K). The recommended optimal ratio for Indian soils is approximately 4:2:1. In practice, India's actual consumption ratio has been documented at approximately 8.2:2.9:1, reflecting a pronounced over-reliance on nitrogen, primarily delivered through subsidised urea.</p>
+    <p>This distortion is not agronomic in origin but entirely policy-driven. The artificially low price of urea — fixed at ₹242 per 45-kilogram bag since 2018, a level that implies a government subsidy exceeding 85 percent of market cost — incentivises farmers to substitute urea for more balanced nutrient inputs. The consequence is progressive soil degradation, declining long-term productivity, and environmental externalities including groundwater contamination from nitrogen runoff.</p>
+
+    <div class="highlight-bar">
+      <strong>Key data point:</strong> India's actual urea consumption reached 38.8 million tonnes in 2024–25, and is projected to exceed 40 million tonnes in the subsequent fiscal year absent meaningful policy intervention.
+    </div>
+
+    <p>The government's Balanced Nutrient Management (BNM) programme, rolled out nationally in 2024, represents a direct policy response to this imbalance. By leveraging Soil Health Card centres to deliver field-specific nutrient prescriptions, BNM aims to correct application distortions at the farm level. Early results from pilot districts have indicated a 15 percent improvement in soil organic carbon and a 12 percent reduction in fertilizer intensity per unit of agricultural output — encouraging, though not yet nationally transformative.</p>
+  </section>
+
+  <!-- SECTION 04 -->
+  <section id="s04">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Regulatory Architecture &amp; Subsidy Framework</h2>
+    </div>
+
+    <p>The Indian fertilizer sector operates within one of the most complex regulatory frameworks of any commodity market in the country. Understanding this architecture is prerequisite to any meaningful analysis of the sector's economics, competitive dynamics, or investment implications.</p>
+
+    <h3>The Dual Subsidy Structure</h3>
+    <p>India employs two distinct subsidy mechanisms for fertilizers, differentiated by product type:</p>
+
+    <div class="two-col">
+      <div class="card">
+        <p class="card-title">Urea Subsidy Scheme (USS)</p>
+        <p>Urea is sold at a statutory maximum retail price of ₹242 per 45-kg bag — unchanged since March 2018. The government pays the difference between this mandated retail price and the actual production or import cost directly to manufacturers. This mechanism renders urea substantially cheaper than all other fertilizer products and is the primary driver of the N:P:K imbalance described above. The USS is fiscally the most significant component of fertilizer support, constituting the majority of the total fertilizer subsidy bill.</p>
+      </div>
+      <div class="card">
+        <p class="card-title">Nutrient-Based Subsidy (NBS) Scheme</p>
+        <p>Introduced on 1 April 2010, the NBS scheme governs all phosphatic and potassic (P&amp;K) fertilizers, covering 28 approved grades. Under this framework, a fixed per-nutrient subsidy is notified by the government on a semi-annual basis (corresponding to the Kharif and Rabi crop seasons), while fertilizer companies are permitted to set the maximum retail price based on market conditions. The government monitors MRP levels but does not directly fix them, allowing for a degree of market-responsiveness absent in the urea segment.</p>
+      </div>
+    </div>
+
+    <h3>Subsidy Flow Architecture</h3>
+    <div class="flow-row">
+      <div class="flow-box">
+        <strong>Central Government</strong>
+        <span>Budget allocation &amp; rate-setting</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box highlight">
+        <strong>Ministry of Chemicals &amp; Fertilizers</strong>
+        <span>Policy &amp; administration</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">
+        <strong>Manufacturers / Importers</strong>
+        <span>DBT-linked reimbursement</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">
+        <strong>Dealers / Retailers</strong>
+        <span>PoS-based sale</span>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">
+        <strong>Farmers</strong>
+        <span>Subsidised price</span>
+      </div>
+    </div>
+
+    <h3>Recent Subsidy Developments (2024–2025)</h3>
+    <p>Several significant policy actions have reshaped the subsidy landscape over the review period:</p>
+
+    <div class="info-box">
+      <p class="info-box-label">Policy update — Kharif 2025</p>
+      <p>The Union Cabinet approved NBS rates for the Kharif 2025 season (April 1 to September 30, 2025) on March 28, 2025. The total budgetary requirement for this season is approximately ₹37,216 crore — representing an increase of approximately ₹13,000 crore over the preceding Rabi season, reflecting both higher international input prices and expanded coverage.</p>
+    </div>
+
+    <div class="info-box">
+      <p class="info-box-label">Special DAP Support Package</p>
+      <p>In response to geopolitical supply disruptions and elevated global DAP prices, the government extended a one-time special subsidy of ₹3,500 per tonne for diammonium phosphate. This measure was originally approved for April 2024 to December 2024 and subsequently extended through March 2025, ensuring continued farmer access to DAP at affordable prices during a period of international price volatility.</p>
+    </div>
+
+    <div class="info-box">
+      <p class="info-box-label">One Nation One Fertilizer (ONOF) Scheme</p>
+      <p>The ONOF initiative mandates unified branding across all subsidised fertilizers under the "Bharat" label — Bharat Urea, Bharat DAP, Bharat NPK. This policy addresses the historical problem of the same product being sold under multiple private brand names, creating farmer confusion regarding quality and authenticity. All subsidised fertilizer packaging must now prominently display the Bharat brand, with the manufacturer's name in a subordinate position.</p>
+    </div>
+
+    <h3>NBS Reform Debate: Bringing Urea Under the Scheme</h3>
+    <p>The Commission for Agricultural Costs and Prices (CACP) has consistently recommended the inclusion of urea within the NBS framework, a reform that would allow dynamic, nutrient-content-based pricing rather than the current fixed MRP. Such a reform would correct the pricing distortion that drives the N:P:K imbalance, reduce fiscal pressure on the subsidy budget, and incentivise more rational agronomic practices. However, the political sensitivity of any urea price increase — given the product's near-universal use among smallholder farmers — has prevented successive governments from implementing this reform. As of the date of this report, urea remains excluded from NBS.</p>
+  </section>
+
+  <!-- SECTION 05 -->
+  <section id="s05">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Import Dependency &amp; Supply Chain Vulnerabilities</h2>
+    </div>
+
+    <p>India's fertilizer sector is characterised by a structurally significant dependence on imported raw materials and finished fertilizers — a vulnerability that has been brought into sharp relief by global supply disruptions, geopolitical tensions, and commodity price cycles over recent years.</p>
+
+    <h3>Import Dependence by Fertilizer Type</h3>
+    <div class="import-bar-wrap">
+      <div class="import-bar-row">
+        <span class="import-bar-label">Urea</span>
+        <div class="import-bar-track">
+          <div class="import-bar-fill" style="width: 25%; background: var(--accent);"></div>
+        </div>
+        <span class="import-bar-pct">~25%</span>
+      </div>
+      <div class="import-bar-row">
+        <span class="import-bar-label">Phosphates (P)</span>
+        <div class="import-bar-track">
+          <div class="import-bar-fill" style="width: 90%; background: var(--accent2);"></div>
+        </div>
+        <span class="import-bar-pct">~90%</span>
+      </div>
+      <div class="import-bar-row">
+        <span class="import-bar-label">Potash (K)</span>
+        <div class="import-bar-track">
+          <div class="import-bar-fill" style="width: 100%; background: var(--ink);"></div>
+        </div>
+        <span class="import-bar-pct">100%</span>
+      </div>
+    </div>
+    <p style="font-size:0.78rem; color: var(--ink-muted); margin-top: -1rem;">Note: India has no commercially viable domestic potash reserves. All MOP (Muriate of Potash) is imported, primarily from Canada, Russia, and Belarus.</p>
+
+    <h3>Raw Material Price Volatility</h3>
+    <p>The sector's exposure to global commodity markets is acute. Ammonia — the fundamental feedstock for urea — is produced primarily from natural gas, and its prices swung between USD 300 and 650 per metric tonne in 2024 alone amid energy market disruptions. Phosphoric acid quotations moved approximately 40 percent during the same period, reflecting the downstream effects of sulphur price movements and geopolitical disruption to Moroccan and Chinese supply.</p>
+    <p>These input cost fluctuations translate directly into working capital pressure for domestic manufacturers, who are frequently caught between fixed or regulated retail prices and volatile procurement costs. Short-term borrowing at rates of 12 to 15 percent to bridge subsidy reimbursement delays has been documented among smaller producers, amplifying margin stress and accelerating consolidation dynamics.</p>
+
+    <h3>The Urea Import Journey</h3>
+    <p>India's stated policy objective is to achieve full self-sufficiency in urea production by the end of 2025 — a target articulated by the Minister of Chemicals and Fertilizers. This ambition is supported by the revival of previously dormant public sector plants and capacity additions under the New Investment Policy (NIP) 2012. The revival programme has added approximately 76.2 lakh metric tonnes per annum of capacity across Gorakhpur, Ramagundam, Barauni, and Sindri units, with the Namrup-IV project in Assam approved in March 2025 as the most recent addition.</p>
+
+    <div class="info-box">
+      <p class="info-box-label">Strategic Partnership — Saudi Arabia</p>
+      <p>In a significant supply diversification initiative, India secured long-term agreements with Saudi Arabia's Maaden for the supply of 3.1 million metric tonnes of DAP annually for five years commencing FY 2025–26, with an option for extension. DAP imports from Saudi Arabia have already increased 17 percent, rising from 1.6 million tonnes in 2023–24 to 1.9 million tonnes in 2024–25. This bilateral agreement reduces India's exposure to spot market volatility and provides planning certainty for the domestic distribution network.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 06 -->
+  <section id="s06">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2 class="section-title">Competitive Landscape &amp; Key Players</h2>
+    </div>
+
+    <p>The Indian fertilizer industry exhibits a dualistic competitive structure: a set of large public sector enterprises supported by policy advantages and extensive dealer networks, alongside a cohort of private sector manufacturers competing on operational efficiency, product specialisation, and distribution reach. The cooperative sector, led by IFFCO, occupies a distinct position bridging public purpose and commercial operations.</p>
+
+    <div class="player-grid">
+      <div class="player-cell">
+        <p class="player-type">Cooperative</p>
+        <p class="player-name">IFFCO</p>
+        <p class="player-note">India's largest fertilizer entity by volume. Pioneer of nano-urea and nano-DAP. Operates a pan-India dealer network across rural mandis.</p>
+      </div>
+      <div class="player-cell">
+        <p class="player-type">Public Sector</p>
+        <p class="player-name">National Fertilizers Ltd (NFL)</p>
+        <p class="player-note">Government of India undertaking. Key urea producer with plants in Uttar Pradesh, Punjab, and Rajasthan. Participating in Namrup-IV JV.</p>
+      </div>
+      <div class="player-cell">
+        <p class="player-type">Public Sector</p>
+        <p class="player-name">Rashtriya Chemicals &amp; Fertilizers (RCF)</p>
+        <p class="player-note">Maharashtra-based PSU producing urea and complex fertilizers. Diversified into specialty nutrients and industrial chemicals.</p>
+      </div>
+      <div class="player-cell">
+        <p class="player-type">Private Sector</p>
+        <p class="player-name">Coromandel International</p>
+        <p class="player-note">India's second-largest fertilizer company by market capitalisation. Leading phosphatic fertilizer manufacturer. Production ~2.8 MT in FY21. Active in nano-fertilizers via Kakinada plant.</p>
+      </div>
+      <div class="player-cell">
+        <p class="player-type">Private Sector</p>
+        <p class="player-name">Chambal Fertilisers &amp; Chemicals</p>
+        <p class="player-note">Major private urea producer. Strong distribution in North and Central India. Competitive cost structure due to gas-based manufacturing.</p>
+      </div>
+      <div class="player-cell">
+        <p class="player-type">Private Sector</p>
+        <p class="player-name">Deepak Fertilisers</p>
+        <p class="player-note">Diversified across fertilizers, industrial chemicals, and mining chemicals. Significant presence in technical ammonium nitrate and specialty plant nutrients.</p>
+      </div>
+    </div>
+
+    <p>The competitive landscape is undergoing gradual consolidation, driven by the liquidity pressures described in the preceding section. Smaller, single-product manufacturers face disproportionate stress from subsidy reimbursement delays and commodity input price volatility, raising the probability of mergers, acquisitions, and market exits over the medium term. Larger, diversified entities with stronger balance sheets and multi-product portfolios are best positioned to benefit from this structural shift.</p>
+  </section>
+
+  <!-- SECTION 07 -->
+  <section id="s07">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2 class="section-title">Technology Disruption: Nano-Fertilizers &amp; Sustainability</h2>
+    </div>
+
+    <p>The most significant technological development in the Indian fertilizer sector over recent years has been the commercialisation of nano-fertilizers — foliar-applied liquid formulations that deliver nutrients at the nanoscale, enabling dramatically higher uptake efficiency relative to conventional granular or powdered products.</p>
+
+    <h3>Nano-Urea: Agronomics and Commercial Scale</h3>
+    <p>IFFCO's nano liquid urea — the world's first commercially launched nano-fertilizer — delivers nitrogen through 500 ml bottles applied as a foliar spray, with each bottle stated to be agronomically equivalent to one standard 45-kilogram bag of conventional urea. Nitrogen use efficiency of up to 85 percent has been cited for nano-urea, compared to approximately 30 to 40 percent for conventional urea applied through soil placement. Cumulatively, 70 million bottles were sold between August 2021 and February 2024.</p>
+
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-value">26.5<span class="stat-unit">Mn</span></div>
+        <div class="stat-label">Nano Urea Plus bottles sold, FY25</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">9.7<span class="stat-unit">Mn</span></div>
+        <div class="stat-label">Nano DAP bottles sold, FY25</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">85<span class="stat-unit">%</span></div>
+        <div class="stat-label">N-use efficiency (nano-urea)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-value">13</div>
+        <div class="stat-label">Nano urea plants targeted by govt, 2025</div>
+      </div>
+    </div>
+
+    <h3>Strategic Implications for the Subsidy Regime</h3>
+    <p>The successful adoption of nano-fertilizers at scale carries material implications for India's fertilizer subsidy architecture. To the extent that nano-urea substitutes conventional urea on a 1:1 bottle-to-bag basis, it reduces the volume of subsidised conventional urea purchased, thereby relieving pressure on the Urea Subsidy Scheme budget. The government's PM-PRANAM scheme (PM Programme for Restoration, Awareness, Nourishment and Amelioration of Mother Earth) provides explicit financial incentives to states that demonstrate reductions in chemical fertilizer consumption — creating a policy pull mechanism reinforcing the nano-fertilizer push.</p>
+
+    <h3>Indigenous Water-Soluble Fertilizer Technology</h3>
+    <p>In August 2025, the Ministry of Mines announced the successful development of India's first indigenous water-soluble fertilizer technology, produced entirely from domestic raw materials. This achievement is strategically significant as it creates a potential pathway for India to transition from being a net importer to a potential exporter in the specialty fertilizer segment — a structural shift that could alter the long-term trade balance dynamics of the sector.</p>
+
+    <h3>Sustainable Agriculture and Organic Fertilizers</h3>
+    <p>India's organic fertilizer market is valued at approximately USD 622.6 million in 2025 and is projected to expand at 7.1 percent CAGR through 2032, driven by growing consumer awareness of chemical-free food, government promotion through schemes such as the Paramparagat Krishi Vikas Yojana (PKVY), and increasing export demand for organically certified agricultural produce. As of March 2024, India had over 1.76 million hectares under certified organic farming, ranking it fourth globally by certified organic area.</p>
+  </section>
+
+  <!-- SECTION 08 -->
+  <section id="s08">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2 class="section-title">Key Risks &amp; Structural Challenges</h2>
+    </div>
+
+    <div class="risk-item">
+      <span class="risk-num">R1</span>
+      <div class="risk-body">
+        <h4>Import Dependency and Geopolitical Exposure</h4>
+        <p>India's near-total dependence on imports for potash and approximately 90 percent of phosphates creates acute exposure to geopolitical disruptions. The Russia-Ukraine conflict materially disrupted global potash and ammonia supply chains, as Russia and Belarus collectively account for a substantial proportion of global MOP exports. Any escalation in Middle Eastern or Central Asian tensions adds a further dimension of supply-side risk, particularly relevant for ammonia and sulphur procurement.</p>
+      </div>
+    </div>
+    <div class="risk-item">
+      <span class="risk-num">R2</span>
+      <div class="risk-body">
+        <h4>Fiscal Sustainability of the Subsidy Regime</h4>
+        <p>Fertilizer subsidies constitute India's second-largest subsidy expenditure after food. At their peak in FY 2022–23, total fertilizer subsidies reached ₹2.55 trillion. While this figure has moderated to ₹1.64 trillion in FY 2024–25, any normalisation of global fertilizer prices upward — or any sustained period of currency weakness — would immediately amplify the subsidy burden. The political economy of urea reform remains deeply entrenched, limiting the government's room to rationalise costs without electoral consequences.</p>
+      </div>
+    </div>
+    <div class="risk-item">
+      <span class="risk-num">R3</span>
+      <div class="risk-body">
+        <h4>Soil Degradation from Chronic Overuse of Nitrogen</h4>
+        <p>The long-term productivity implications of sustained urea overuse are increasingly well-documented. Declining soil organic carbon, disrupted microbial ecosystems, and progressive degradation of soil physical structure represent agronomic risks that compound over multiple growing seasons. The economic costs of soil rehabilitation — should policy intervention fail to correct consumption patterns — could substantially exceed the fiscal costs of subsidy reform itself.</p>
+      </div>
+    </div>
+    <div class="risk-item">
+      <span class="risk-num">R4</span>
+      <div class="risk-body">
+        <h4>Subsidy Reimbursement Delays and Liquidity Stress</h4>
+        <p>The multi-tier validation process required for subsidy disbursement under the Direct Benefit Transfer framework creates substantial working capital strain for manufacturers, particularly smaller entities. Manufacturers financing receivables at 12 to 15 percent interest rates face structural margin compression that has no counterpart among larger, better-capitalised peers. This dynamic is accelerating consolidation and may reduce competitive diversity in the medium term.</p>
+      </div>
+    </div>
+    <div class="risk-item">
+      <span class="risk-num">R5</span>
+      <div class="risk-body">
+        <h4>Monsoon and Seasonal Demand Variability</h4>
+        <p>India's fertilizer demand is fundamentally tied to the monsoon agricultural calendar, with Kharif and Rabi seasons creating pronounced demand peaks and inventory cycles. Below-normal or poorly distributed monsoon rainfall directly depresses fertilizer sales volumes, creating revenue and margin volatility that is not easily hedged. Climate change projections suggesting increased monsoon variability over the coming decades add a structural dimension to this cyclical risk.</p>
+      </div>
+    </div>
+    <div class="risk-item">
+      <span class="risk-num">R6</span>
+      <div class="risk-body">
+        <h4>Adoption Risk for Nano-Fertilizer Technology</h4>
+        <p>While the agronomic case for nano-fertilizers is compelling, farmer adoption at scale faces meaningful barriers: limited awareness in non-pilot districts, unfamiliarity with foliar application technique, distribution chain gaps in remote areas, and a behavioural anchoring toward conventional products validated over decades. The government's promotional spending and subsidy incentives will need to be sustained over multiple seasons to build the critical mass of adoption necessary to materially shift overall consumption patterns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09 -->
+  <section id="s09">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2 class="section-title">Strategic Outlook &amp; Investment Considerations</h2>
+    </div>
+
+    <p>The Indian fertilizer sector presents a complex but strategically significant landscape for analysis and potential engagement. Growth fundamentals — population-driven food demand, ongoing agricultural modernisation, and government commitment to farmer income support — are robust and multi-decade in nature. However, the policy-induced distortions, import vulnerabilities, and technology transition dynamics demand careful navigation.</p>
+
+    <h3>Near, Medium, and Long-Term Horizon Summary</h3>
+
+    <div class="horizon-band">
+      <div class="horizon-label near">Near Term<br>2025–2026</div>
+      <div class="horizon-content">
+        <ul>
+          <li>Urea self-sufficiency target: domestic capacity additions expected to materially reduce import volumes by end-2025.</li>
+          <li>NBS rate revisions: semi-annual NBS notifications will continue to reflect international input price movements — monitor for above-budget outturns.</li>
+          <li>Nano-fertilizer scale-up: IFFCO's two new Nano DAP plants in Uttar Pradesh (Aonla and Phulpur) targeting 2 lakh bottles daily collectively.</li>
+          <li>DAP supply security: 5-year Maaden supply agreement insulates India from spot market volatility through FY 2030.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="horizon-band">
+      <div class="horizon-label mid">Medium Term<br>2026–2030</div>
+      <div class="horizon-content">
+        <ul>
+          <li>NBS framework reform: pressure for urea inclusion in NBS will intensify as fiscal costs remain elevated; any reform would represent a structural re-rating event for the sector.</li>
+          <li>Nano-fertilizer mainstreaming: sustained government promotion expected to drive nano-urea penetration to 20–25 percent of urea-equivalent volumes.</li>
+          <li>Organic and specialty segments: biofertilizer and water-soluble fertilizer markets to grow at premium to overall market, driven by export-oriented organic farming and horticulture.</li>
+          <li>Sector consolidation: expect mergers and exits among second-tier manufacturers as working capital pressure persists.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="horizon-band">
+      <div class="horizon-label long">Long Term<br>2030 and Beyond</div>
+      <div class="horizon-content">
+        <ul>
+          <li>Precision nutrition: soil-specific digital prescriptions via expanded Soil Health Card infrastructure to fundamentally reshape demand composition.</li>
+          <li>Potash self-sufficiency: R&amp;D into alternative K sources (including sea minerals and industrial by-products) may gradually reduce the 100 percent import dependency.</li>
+          <li>Export ambition: indigenous water-soluble fertilizer technology may position India as a specialty fertilizer exporter in ASEAN and African markets.</li>
+          <li>Sustainability regulation: anticipated international standards on nitrogen use efficiency and soil carbon may compel earlier-than-expected transition away from conventional urea.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 2.5rem;">Concluding Assessment</h3>
+    <p>The Indian fertilizer market is best understood not as a simple commodity sector, but as a policy-managed system in structural transition. The fundamental demand drivers are durable and well-supported. The primary sources of value destruction — urea price distortion, potash import vulnerability, and subsidy reimbursement friction — are known, catalogued, and to varying degrees addressable through policy reform. The technology trajectory, led by nano-fertilizers and precision agronomy, points toward a market with meaningfully different economics in ten years relative to today.</p>
+    <p>Stakeholders seeking to engage with this sector — whether as investors, analysts, policy advisors, or industry participants — must maintain a dual analytical lens: one focused on the near-term operational and regulatory environment, and another attentive to the longer-arc structural forces reshaping the market's fundamental architecture.</p>
+
+    <div class="pull-quote">
+      <p>India's fertilizer market is not merely growing — it is transforming. The convergence of fiscal pressure on legacy subsidies, technological disruption from nano-formulations, and the government's Atmanirbhar Bharat self-sufficiency agenda creates a sector at an inflection point. The decade ahead will likely determine whether India transitions from a structurally import-dependent, subsidy-distorted market to a balanced, technologically advanced, and increasingly self-sufficient agricultural nutrition ecosystem.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+  <footer>
+    <div>
+      Indian Fertilizer Market — Sector Intelligence Report<br>
+      For internal use only
+    </div>
+    <div style="text-align: right;">
+      Sources: Ministry of Chemicals &amp; Fertilizers · PIB India<br>
+      IMARC Group · Mordor Intelligence · MarkNtel Advisors<br>
+      Business Standard · Drishti IAS · Persistence Market Research
+    </div>
+  </footer>
+
+</main>
+</body>
+</html>
