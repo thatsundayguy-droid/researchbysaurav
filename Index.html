@@ -21,336 +21,155 @@
     --sky: #1B6CA8;
     --ink: #0F1F0F;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: var(--fog); color: var(--ink); font-family: 'Epilogue', sans-serif; font-size: 14px; line-height: 1.65; }
 
-  /* HERO */
-  .hero {
-    background: var(--deep);
-    padding: 60px 48px 52px;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: '🇮🇳';
-    position: absolute;
-    right: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 120px;
-    opacity: 0.06;
-    line-height: 1;
-  }
-  .tag {
-    display: inline-flex;
+  /* ══ AUTO NAV ══ */
+  .site-nav {
+    background: #0d1f0d;
+    border-bottom: 1px solid rgba(124,185,80,0.2);
+    padding: 0 48px;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(124,185,80,0.15);
-    border: 1px solid rgba(124,185,80,0.3);
-    color: var(--lime);
+    justify-content: space-between;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand {
     font-family: 'Space Mono', monospace;
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 2px;
-    margin-bottom: 20px;
+    color: rgba(255,255,255,0.4);
+    white-space: nowrap;
   }
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(38px, 5vw, 66px);
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.0;
-    max-width: 680px;
-  }
-  .hero h1 span { color: var(--saffron); }
-  .hero-sub {
-    color: rgba(255,255,255,0.5);
-    font-size: 15px;
-    margin-top: 18px;
-    max-width: 500px;
-    font-weight: 300;
-    font-style: italic;
-  }
-  .hero-nums {
+  .nav-links {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0;
-    margin-top: 48px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 32px;
+    gap: 4px;
+    overflow-x: auto;
   }
-  .hnum {
-    padding-right: 40px;
-    margin-right: 40px;
-    border-right: 1px solid rgba(255,255,255,0.1);
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    color: rgba(255,255,255,0.45);
+    white-space: nowrap;
+    border: 1px solid transparent;
   }
+  .nav-link:hover { background: rgba(124,185,80,0.1); color: #7CB950; }
+  .nav-link.active { background: rgba(124,185,80,0.15); color: #7CB950; border-color: rgba(124,185,80,0.25); }
+
+  /* HERO */
+  .hero { background: var(--deep); padding: 60px 48px 52px; position: relative; overflow: hidden; }
+  .hero::after { content: '🇮🇳'; position: absolute; right: 60px; top: 50%; transform: translateY(-50%); font-size: 120px; opacity: 0.06; line-height: 1; }
+  .tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(124,185,80,0.15); border: 1px solid rgba(124,185,80,0.3); color: var(--lime); font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; margin-bottom: 20px; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(38px, 5vw, 66px); font-weight: 800; color: #fff; line-height: 1.0; max-width: 680px; }
+  .hero h1 span { color: var(--saffron); }
+  .hero-sub { color: rgba(255,255,255,0.5); font-size: 15px; margin-top: 18px; max-width: 500px; font-weight: 300; font-style: italic; }
+  .hero-nums { display: flex; flex-wrap: wrap; gap: 0; margin-top: 48px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 32px; }
+  .hnum { padding-right: 40px; margin-right: 40px; border-right: 1px solid rgba(255,255,255,0.1); }
   .hnum:last-child { border-right: none; }
-  .hnum-val {
-    font-family: 'Syne', sans-serif;
-    font-size: 30px;
-    font-weight: 800;
-    color: var(--lime);
-    line-height: 1;
-  }
-  .hnum-lab {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: rgba(255,255,255,0.35);
-    margin-top: 5px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
+  .hnum-val { font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800; color: var(--lime); line-height: 1; }
+  .hnum-lab { font-family: 'Space Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 5px; letter-spacing: 1px; text-transform: uppercase; }
 
-  /* LAYOUT */
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px 80px; }
-
-  .sec-tag {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--saffron);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
-  .sec-h {
-    font-family: 'Syne', sans-serif;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--deep);
-    margin-bottom: 8px;
-  }
+  .sec-tag { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 3px; color: var(--saffron); text-transform: uppercase; margin-bottom: 8px; }
+  .sec-h { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--deep); margin-bottom: 8px; }
   .sec-p { font-size: 13.5px; color: #4a5a4a; max-width: 600px; margin-bottom: 28px; }
-
   .divider { height: 1px; background: var(--parch); margin: 52px 0 44px; }
 
-  /* CALLOUT */
-  .callout {
-    background: var(--deep);
-    color: #fff;
-    border-radius: 10px;
-    padding: 32px 36px;
-    margin: 44px 0;
-    border-left: 4px solid var(--saffron);
-  }
+  .callout { background: var(--deep); color: #fff; border-radius: 10px; padding: 32px 36px; margin: 44px 0; border-left: 4px solid var(--saffron); }
   .callout p { font-size: 15px; line-height: 1.85; max-width: 760px; font-weight: 300; }
   .callout strong { color: var(--lime); font-weight: 600; }
   .callout-src { margin-top: 14px; font-family: 'Space Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: 1px; }
 
-  /* 3-PATH CHOICE */
   .path-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
   @media(max-width:860px){ .path-row { grid-template-columns: 1fr 1fr; } }
   @media(max-width:560px){ .path-row { grid-template-columns: 1fr; } }
-
-  .path {
-    border-radius: 10px;
-    padding: 26px;
-    border: 2px solid transparent;
-    position: relative;
-    cursor: default;
-    transition: transform 0.2s;
-  }
+  .path { border-radius: 10px; padding: 26px; border: 2px solid transparent; position: relative; cursor: default; transition: transform 0.2s; }
   .path:hover { transform: translateY(-2px); }
   .path.hot { background: var(--deep); border-color: var(--lime); }
   .path.mid { background: white; border-color: var(--parch); }
   .path.low { background: var(--sand); border-color: var(--parch); }
-
   .path-icon { font-size: 28px; margin-bottom: 12px; }
-  .path-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-  }
+  .path-label { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
   .hot .path-label { color: var(--lime); }
   .mid .path-label { color: var(--saffron); }
   .low .path-label { color: var(--earth); }
-
-  .path-name {
-    font-family: 'Syne', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
+  .path-name { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 800; margin-bottom: 10px; }
   .hot .path-name { color: #fff; }
   .mid .path-name, .low .path-name { color: var(--deep); }
-
   .path-desc { font-size: 12.5px; line-height: 1.7; }
   .hot .path-desc { color: rgba(255,255,255,0.65); }
   .mid .path-desc, .low .path-desc { color: #4a5a4a; }
-
-  .path-cost-box {
-    margin-top: 16px;
-    padding-top: 14px;
-    border-top: 1px solid;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-  }
+  .path-cost-box { margin-top: 16px; padding-top: 14px; border-top: 1px solid; font-family: 'Space Mono', monospace; font-size: 11px; }
   .hot .path-cost-box { border-color: rgba(124,185,80,0.25); color: var(--lime); }
   .mid .path-cost-box { border-color: var(--parch); color: var(--leaf); }
   .low .path-cost-box { border-color: #ddd0b8; color: var(--earth); }
-
   .cost-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
   .cost-val { font-weight: 700; }
 
-  /* INVESTMENT TABLE */
   .inv-table { width: 100%; border-collapse: separate; border-spacing: 0 6px; margin-bottom: 40px; }
-  .inv-table thead th {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #6a7a6a;
-    padding: 8px 14px;
-    text-align: left;
-    border-bottom: 2px solid var(--parch);
-  }
+  .inv-table thead th { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #6a7a6a; padding: 8px 14px; text-align: left; border-bottom: 2px solid var(--parch); }
   .inv-table tbody tr { background: white; }
   .inv-table tbody tr:hover { box-shadow: 0 4px 18px rgba(0,0,0,0.07); }
-  .inv-table td {
-    padding: 14px;
-    border-top: 1px solid var(--parch);
-    border-bottom: 1px solid var(--parch);
-    vertical-align: middle;
-  }
+  .inv-table td { padding: 14px; border-top: 1px solid var(--parch); border-bottom: 1px solid var(--parch); vertical-align: middle; }
   .inv-table td:first-child { border-left: 1px solid var(--parch); border-radius: 8px 0 0 8px; }
   .inv-table td:last-child  { border-right: 1px solid var(--parch); border-radius: 0 8px 8px 0; }
   .item-name { font-weight: 600; font-size: 13.5px; color: var(--deep); }
   .item-sub  { font-size: 11px; color: #6a7a6a; margin-top: 2px; }
   .inr { font-family: 'Space Mono', monospace; font-size: 13px; color: var(--leaf); font-weight: 700; }
-  .badge {
-    display: inline-block;
-    padding: 3px 9px;
-    border-radius: 20px;
-    font-size: 10.5px;
-    font-weight: 600;
-    white-space: nowrap;
-  }
+  .badge { display: inline-block; padding: 3px 9px; border-radius: 20px; font-size: 10.5px; font-weight: 600; white-space: nowrap; }
   .b-g { background: #d5f0dc; color: #1a6b2e; }
   .b-a { background: #fff0cc; color: #7a4e00; }
   .b-r { background: #fde8e8; color: #8b1a1a; }
   .b-b { background: #d5e8f8; color: #0d4470; }
 
-  /* REGULATORY TIMELINE */
   .reg-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 40px; position: relative; }
-  .reg-steps::before {
-    content: '';
-    position: absolute;
-    left: 22px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--parch);
-  }
+  .reg-steps::before { content: ''; position: absolute; left: 22px; top: 0; bottom: 0; width: 2px; background: var(--parch); }
   .reg-step { display: flex; gap: 20px; align-items: flex-start; padding: 0 0 28px; position: relative; }
-  .reg-num {
-    width: 44px;
-    height: 44px;
-    background: var(--deep);
-    color: var(--lime);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Syne', sans-serif;
-    font-size: 14px;
-    font-weight: 800;
-    flex-shrink: 0;
-    z-index: 1;
-    border: 3px solid var(--fog);
-  }
+  .reg-num { width: 44px; height: 44px; background: var(--deep); color: var(--lime); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; flex-shrink: 0; z-index: 1; border: 3px solid var(--fog); }
   .reg-body { flex: 1; padding-top: 8px; }
   .reg-title { font-weight: 700; font-size: 14px; color: var(--deep); margin-bottom: 4px; }
   .reg-desc { font-size: 12.5px; color: #4a5a4a; line-height: 1.65; }
-  .reg-time {
-    display: inline-block;
-    margin-top: 6px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--saffron);
-    background: rgba(224,123,26,0.1);
-    padding: 2px 8px;
-    border-radius: 3px;
-  }
+  .reg-time { display: inline-block; margin-top: 6px; font-family: 'Space Mono', monospace; font-size: 10px; color: var(--saffron); background: rgba(224,123,26,0.1); padding: 2px 8px; border-radius: 3px; }
 
-  /* POLICY GRID */
   .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
   @media(max-width:800px){ .policy-grid { grid-template-columns: 1fr 1fr; } }
   @media(max-width:520px){ .policy-grid { grid-template-columns: 1fr; } }
-
-  .pol {
-    background: white;
-    border: 1.5px solid var(--parch);
-    border-radius: 10px;
-    padding: 22px;
-  }
-  .pol-scheme {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: var(--sky);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-  }
+  .pol { background: white; border: 1.5px solid var(--parch); border-radius: 10px; padding: 22px; }
+  .pol-scheme { font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--sky); margin-bottom: 6px; text-transform: uppercase; }
   .pol-name { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; color: var(--deep); margin-bottom: 8px; }
-  .pol-amt {
-    font-family: 'Space Mono', monospace;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--saffron);
-    margin-bottom: 8px;
-  }
+  .pol-amt { font-family: 'Space Mono', monospace; font-size: 18px; font-weight: 700; color: var(--saffron); margin-bottom: 8px; }
   .pol-desc { font-size: 12px; color: #4a5a4a; line-height: 1.65; }
 
-  /* STATES BAND */
   .state-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
-  .state-chip {
-    background: white;
-    border: 1.5px solid var(--parch);
-    border-radius: 8px;
-    padding: 14px 18px;
-    text-align: center;
-    min-width: 130px;
-  }
+  .state-chip { background: white; border: 1.5px solid var(--parch); border-radius: 8px; padding: 14px 18px; text-align: center; min-width: 130px; }
   .state-name { font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; color: var(--deep); margin-bottom: 4px; }
   .state-why { font-size: 11px; color: #6a7a6a; }
-  .state-rank {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--leaf);
-    margin-bottom: 6px;
-  }
+  .state-rank { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--leaf); margin-bottom: 6px; }
 
-  /* MARGIN TABLE */
   .marg-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
   .marg-label { font-family: 'Space Mono', monospace; font-size: 11px; color: #4a5a4a; min-width: 180px; text-align: right; }
   .marg-bar { flex: 1; background: var(--parch); border-radius: 3px; height: 24px; overflow: hidden; }
-  .marg-fill {
-    height: 100%;
-    border-radius: 3px;
-    display: flex;
-    align-items: center;
-    padding-left: 10px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    font-weight: 700;
-    color: white;
-  }
+  .marg-fill { height: 100%; border-radius: 3px; display: flex; align-items: center; padding-left: 10px; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; color: white; }
   .mf-g { background: linear-gradient(90deg, var(--leaf), var(--lime)); }
   .mf-a { background: linear-gradient(90deg, var(--earth), var(--saffron)); }
   .mf-b { background: linear-gradient(90deg, #1a4e7a, var(--sky)); }
 
-  /* WARNINGS */
   .warn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
   @media(max-width:640px){ .warn-grid { grid-template-columns: 1fr; } }
-
-  .warn {
-    border-radius: 10px;
-    padding: 22px;
-  }
+  .warn { border-radius: 10px; padding: 22px; }
   .warn.red   { background: #fff5f5; border: 1.5px solid #f5c6c6; }
   .warn.amber { background: #fffbf0; border: 1.5px solid #f5e0a0; }
   .warn.green { background: #f0faf2; border: 1.5px solid #b2dfc0; }
@@ -362,37 +181,41 @@
   .warn-body { font-size: 12.5px; line-height: 1.7; color: #4a5a4a; }
   .warn-body strong { color: var(--deep); }
 
-  /* CHECKLIST */
   .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
   @media(max-width:640px){ .check-grid { grid-template-columns: 1fr; } }
   .check-box { background: white; border: 1.5px solid var(--parch); border-radius: 10px; padding: 24px; }
   .check-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; color: var(--deep); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
   .check-list { list-style: none; }
-  .check-list li {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    padding: 7px 0;
-    border-bottom: 1px solid var(--parch);
-    font-size: 12.5px;
-    color: #4a5a4a;
-  }
+  .check-list li { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--parch); font-size: 12.5px; color: #4a5a4a; }
   .check-list li:last-child { border: none; }
   .check-list li::before { content: '☐'; color: var(--leaf); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
-  /* FOOTER */
-  footer {
-    background: var(--deep);
-    color: rgba(255,255,255,0.3);
-    text-align: center;
-    padding: 22px;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 1.5px;
-  }
+  footer { background: var(--deep); color: rgba(255,255,255,0.3); text-align: center; padding: 22px; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; }
 </style>
 </head>
 <body>
+
+<!-- ══ AUTO NAV — reads pages.json, no editing needed ══ -->
+<nav class="site-nav">
+  <div class="nav-brand">🌿 Fertilizer Research</div>
+  <div class="nav-links" id="nav-links"><!-- built by JS --></div>
+</nav>
+<script>
+  fetch('pages.json')
+    .then(r => r.json())
+    .then(pages => {
+      const current = location.pathname.split('/').pop() || 'Index.html';
+      const container = document.getElementById('nav-links');
+      container.innerHTML = pages.map(p =>
+        `<a href="${p.file}" class="nav-link${current === p.file ? ' active' : ''}">${p.emoji} ${p.title}</a>`
+      ).join('');
+    })
+    .catch(() => {
+      // fallback if pages.json not found
+      document.getElementById('nav-links').innerHTML =
+        '<a href="Index.html" class="nav-link active">📋 India Playbook</a>';
+    });
+</script>
 
 <!-- ══ HERO ══ -->
 <div class="hero">
@@ -400,42 +223,25 @@
   <h1>The <span>India</span> Fertilizer<br>Founder's Playbook</h1>
   <p class="hero-sub">INR figures. Indian regulations. Indian states. Indian government schemes. Everything calibrated for setting up in India.</p>
   <div class="hero-nums">
-    <div class="hnum">
-      <div class="hnum-val">₹1.9L Cr+</div>
-      <div class="hnum-lab">India annual fertilizer subsidy (GOI)</div>
-    </div>
-    <div class="hnum">
-      <div class="hnum-val">2nd</div>
-      <div class="hnum-lab">Largest fertilizer consumer globally</div>
-    </div>
-    <div class="hnum">
-      <div class="hnum-val">60M+</div>
-      <div class="hnum-lab">Tonnes annual demand</div>
-    </div>
-    <div class="hnum">
-      <div class="hnum-val">14 Cr</div>
-      <div class="hnum-lab">Farming families to serve</div>
-    </div>
+    <div class="hnum"><div class="hnum-val">₹1.9L Cr+</div><div class="hnum-lab">India annual fertilizer subsidy (GOI)</div></div>
+    <div class="hnum"><div class="hnum-val">2nd</div><div class="hnum-lab">Largest fertilizer consumer globally</div></div>
+    <div class="hnum"><div class="hnum-val">60M+</div><div class="hnum-lab">Tonnes annual demand</div></div>
+    <div class="hnum"><div class="hnum-val">14 Cr</div><div class="hnum-lab">Farming families to serve</div></div>
   </div>
 </div>
 
-<!-- ══ PAGE WRAP ══ -->
 <div class="wrap">
-
-  <!-- VETERAN VOICE -->
   <div class="callout" style="margin-top:48px;">
     <p>"India is the <strong>single best country in the world to start a fertilizer business right now</strong>. You have a government that spent ₹2 lakh crore subsidising chemicals and is now actively paying states to switch to biofertilizers. You have 14 crore farmers, most of whom have never seen a decent agronomist. ICAR just revised quality standards meaning <strong>the bar is rising and fly-by-night operators will be flushed out</strong> — that's your window. A small-scale biofertilizer or specialty blend unit, done right, can be operational in under ₹75 lakhs. This is genuinely a business where a good team beats a deep pocket."</p>
     <div class="callout-src">— Veteran's read on the India opportunity</div>
   </div>
 
-  <!-- ══ SECTION 1: THE 3 PATHS ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 01</div>
   <div class="sec-h">Pick Your Lane in India</div>
   <p class="sec-p">Three entry paths exist in India, each with a very different capital requirement and risk profile. Be honest about which one matches your team and money.</p>
 
   <div class="path-row">
-
     <div class="path hot">
       <div class="path-icon">🦠</div>
       <div class="path-label">🔥 Best Bet</div>
@@ -448,7 +254,6 @@
         <div class="cost-row"><span>Industry category</span><span class="cost-val">White 🟢</span></div>
       </div>
     </div>
-
     <div class="path mid">
       <div class="path-icon">⚗️</div>
       <div class="path-label">✅ Strong Play</div>
@@ -461,7 +266,6 @@
         <div class="cost-row"><span>Industry category</span><span class="cost-val">Orange 🟠</span></div>
       </div>
     </div>
-
     <div class="path low">
       <div class="path-icon">📦</div>
       <div class="path-label">⚡ Lowest Risk Entry</div>
@@ -474,10 +278,8 @@
         <div class="cost-row"><span>Industry category</span><span class="cost-val">White 🟢</span></div>
       </div>
     </div>
-
   </div>
 
-  <!-- ══ SECTION 2: INVESTMENT BREAKDOWN ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 02</div>
   <div class="sec-h">Investment Breakdown — INR Reality Check</div>
@@ -486,101 +288,57 @@
   <table class="inv-table">
     <thead>
       <tr>
-        <th>Cost Head</th>
-        <th>Biofertilizer Unit</th>
-        <th>Specialty Blend Unit</th>
-        <th>Organic/Compost Unit</th>
-        <th>Priority</th>
+        <th>Cost Head</th><th>Biofertilizer Unit</th><th>Specialty Blend Unit</th><th>Organic/Compost Unit</th><th>Priority</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>
-          <div class="item-name">Land & Civil Works</div>
-          <div class="item-sub">Leased shed or owned plot; 2,000–5,000 sq ft typically needed</div>
-        </td>
-        <td><span class="inr">₹5–15L</span></td>
-        <td><span class="inr">₹8–20L</span></td>
-        <td><span class="inr">₹3–10L</span></td>
+        <td><div class="item-name">Land & Civil Works</div><div class="item-sub">Leased shed or owned plot; 2,000–5,000 sq ft typically needed</div></td>
+        <td><span class="inr">₹5–15L</span></td><td><span class="inr">₹8–20L</span></td><td><span class="inr">₹3–10L</span></td>
         <td><span class="badge b-a">Medium</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">Core Machinery & Equipment</div>
-          <div class="item-sub">Fermenters, granulators, autoclave, laminar flow, fillers, mixers</div>
-        </td>
-        <td><span class="inr">₹10–30L</span></td>
-        <td><span class="inr">₹20–50L</span></td>
-        <td><span class="inr">₹5–15L</span></td>
+        <td><div class="item-name">Core Machinery & Equipment</div><div class="item-sub">Fermenters, granulators, autoclave, laminar flow, fillers, mixers</div></td>
+        <td><span class="inr">₹10–30L</span></td><td><span class="inr">₹20–50L</span></td><td><span class="inr">₹5–15L</span></td>
         <td><span class="badge b-r">Highest</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">QC Laboratory Setup</div>
-          <div class="item-sub">Mandatory under FCO. Incubators, colony counters, microscope, pH meters</div>
-        </td>
-        <td><span class="inr">₹3–8L</span></td>
-        <td><span class="inr">₹3–8L</span></td>
-        <td><span class="inr">₹1–3L</span></td>
+        <td><div class="item-name">QC Laboratory Setup</div><div class="item-sub">Mandatory under FCO. Incubators, colony counters, microscope, pH meters</div></td>
+        <td><span class="inr">₹3–8L</span></td><td><span class="inr">₹3–8L</span></td><td><span class="inr">₹1–3L</span></td>
         <td><span class="badge b-r">Mandatory</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">Working Capital (Year 1)</div>
-          <div class="item-sub">Raw materials, packaging, utilities, wages (typically 4 staff for small unit)</div>
-        </td>
-        <td><span class="inr">₹5–15L</span></td>
-        <td><span class="inr">₹10–25L</span></td>
-        <td><span class="inr">₹3–8L</span></td>
+        <td><div class="item-name">Working Capital (Year 1)</div><div class="item-sub">Raw materials, packaging, utilities, wages (typically 4 staff for small unit)</div></td>
+        <td><span class="inr">₹5–15L</span></td><td><span class="inr">₹10–25L</span></td><td><span class="inr">₹3–8L</span></td>
         <td><span class="badge b-r">Highest</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">FCO Registration & Licensing</div>
-          <div class="item-sub">State Ag Dept fees, Form D application, consultants, SPCB NOC</div>
-        </td>
-        <td><span class="inr">₹50K–2L</span></td>
-        <td><span class="inr">₹50K–2L</span></td>
-        <td><span class="inr">₹25K–1L</span></td>
+        <td><div class="item-name">FCO Registration & Licensing</div><div class="item-sub">State Ag Dept fees, Form D application, consultants, SPCB NOC</div></td>
+        <td><span class="inr">₹50K–2L</span></td><td><span class="inr">₹50K–2L</span></td><td><span class="inr">₹25K–1L</span></td>
         <td><span class="badge b-a">Medium</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">ICAR/University Field Trials</div>
-          <div class="item-sub">Biofertilizer efficacy trials required since July 2025 mandate</div>
-        </td>
-        <td><span class="inr">₹2–6L</span></td>
-        <td><span class="inr">₹1–3L</span></td>
-        <td><span class="inr">—</span></td>
+        <td><div class="item-name">ICAR/University Field Trials</div><div class="item-sub">Biofertilizer efficacy trials required since July 2025 mandate</div></td>
+        <td><span class="inr">₹2–6L</span></td><td><span class="inr">₹1–3L</span></td><td><span class="inr">—</span></td>
         <td><span class="badge b-a">Required</span></td>
       </tr>
       <tr>
-        <td>
-          <div class="item-name">Branding, Packaging, Distribution</div>
-          <div class="item-sub">Bags, labels (FCO mandated), dealer relationships, initial marketing</div>
-        </td>
-        <td><span class="inr">₹2–5L</span></td>
-        <td><span class="inr">₹3–8L</span></td>
-        <td><span class="inr">₹2–5L</span></td>
+        <td><div class="item-name">Branding, Packaging, Distribution</div><div class="item-sub">Bags, labels (FCO mandated), dealer relationships, initial marketing</div></td>
+        <td><span class="inr">₹2–5L</span></td><td><span class="inr">₹3–8L</span></td><td><span class="inr">₹2–5L</span></td>
         <td><span class="badge b-a">Medium</span></td>
       </tr>
       <tr style="background: var(--sand);">
-        <td>
-          <div class="item-name" style="color: var(--deep); font-size:15px;">TOTAL ESTIMATED SETUP</div>
-          <div class="item-sub">All-in, small-to-mid scale. Excludes land purchase.</div>
-        </td>
-        <td><span class="inr" style="font-size:16px; color:var(--deep)">₹25–75L</span></td>
-        <td><span class="inr" style="font-size:16px; color:var(--deep)">₹50L–1.5Cr</span></td>
-        <td><span class="inr" style="font-size:16px; color:var(--deep)">₹15–50L</span></td>
+        <td><div class="item-name" style="color:var(--deep);font-size:15px;">TOTAL ESTIMATED SETUP</div><div class="item-sub">All-in, small-to-mid scale. Excludes land purchase.</div></td>
+        <td><span class="inr" style="font-size:16px;color:var(--deep)">₹25–75L</span></td>
+        <td><span class="inr" style="font-size:16px;color:var(--deep)">₹50L–1.5Cr</span></td>
+        <td><span class="inr" style="font-size:16px;color:var(--deep)">₹15–50L</span></td>
         <td><span class="badge b-g">Full Range</span></td>
       </tr>
     </tbody>
   </table>
 
-  <!-- MARGIN VISUAL -->
   <div class="sec-tag">Margin Reality</div>
   <div class="sec-h" style="margin-bottom:20px;">What the P&L Looks Like</div>
-
   <div class="marg-row"><div class="marg-label">Organic / Vermicompost Export</div><div class="marg-bar"><div class="marg-fill mf-g" style="width:65%">55–65%</div></div></div>
   <div class="marg-row"><div class="marg-label">Specialty Micronutrient Blends</div><div class="marg-bar"><div class="marg-fill mf-g" style="width:55%">45–55%</div></div></div>
   <div class="marg-row"><div class="marg-label">Liquid Biofertilizer</div><div class="marg-bar"><div class="marg-fill mf-g" style="width:48%">40–55%</div></div></div>
@@ -589,288 +347,88 @@
   <div class="marg-row"><div class="marg-label">Fertilizer Trading / Distribution</div><div class="marg-bar"><div class="marg-fill mf-b" style="width:15%">8–15%</div></div></div>
   <div class="marg-row"><div class="marg-label">Conventional NPK / Urea</div><div class="marg-bar"><div class="marg-fill mf-b" style="width:8%">3–8%</div></div></div>
 
-  <!-- ══ SECTION 3: REGULATIONS ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 03</div>
   <div class="sec-h">The Regulatory Road — Step by Step</div>
   <p class="sec-p">India's fertilizer regulation is real and non-negotiable. The good news: biofertilizer is the easiest category. Here's exactly what you need to do.</p>
 
   <div class="reg-steps">
-
-    <div class="reg-step">
-      <div class="reg-num">01</div>
-      <div class="reg-body">
-        <div class="reg-title">Business Registration (MCA / Udyam)</div>
-        <div class="reg-desc">Register your entity — Pvt Ltd or LLP is recommended for credibility with dealers and government. Get UDYAM (MSME) registration simultaneously — this unlocks priority sector lending and subsidy eligibility.</div>
-        <div class="reg-time">⏱ 7–15 days · Cost: ₹5,000–20,000</div>
-      </div>
-    </div>
-
-    <div class="reg-step">
-      <div class="reg-num">02</div>
-      <div class="reg-body">
-        <div class="reg-title">FCO Manufacturing License — State Ag Department</div>
-        <div class="reg-desc">File Form D (in duplicate) with your State Department of Agriculture. Include MOA/AOA, site plan, lab equipment list, and premises details. The state sends an inspector for physical verification. Biofertilizers = White Category (easiest); Blending = Orange; Basic chemicals = Red (avoid).</div>
-        <div class="reg-time">⏱ 30–60 days · Cost: ₹10,000–50,000 (varies by state)</div>
-      </div>
-    </div>
-
-    <div class="reg-step">
-      <div class="reg-num">03</div>
-      <div class="reg-body">
-        <div class="reg-title">SPCB Consent to Establish & Operate</div>
-        <div class="reg-desc">State Pollution Control Board consent goes through 3 stages: document scrutiny → site inspection → NOC. White industry (biofertilizers) is fast-tracked. Orange takes longer. File this in parallel with FCO application.</div>
-        <div class="reg-time">⏱ 45–90 days · Cost: ₹15,000–60,000</div>
-      </div>
-    </div>
-
-    <div class="reg-step">
-      <div class="reg-num">04</div>
-      <div class="reg-body">
-        <div class="reg-title">Biofertilizer Product Registration (NCOF / Controller of Fertilizers)</div>
-        <div class="reg-desc">Each biofertilizer product must be registered with the National Centre of Organic Farming (NCOF) under FCO. Provisional registration is quicker. For permanent registration: NABL/GLP-certified lab analysis + ICAR/State Ag University agronomic trials across climate zones. Since July 2025, efficacy proof is mandatory before market launch.</div>
-        <div class="reg-time">⏱ 9–18 months for full registration · ₹2–8 Lakhs total</div>
-      </div>
-    </div>
-
-    <div class="reg-step">
-      <div class="reg-num">05</div>
-      <div class="reg-body">
-        <div class="reg-title">FSSAI / BIS / Export Certifications (if exporting)</div>
-        <div class="reg-desc">For organic export to EU or Japan: NPOP (National Programme for Organic Production) certification is mandatory. OMRI listing helps for the US. Budget 12–24 months for international certifications. Domestic organic label requires NPOP or PGS-India certification.</div>
-        <div class="reg-time">⏱ 12–24 months for export certs · ₹50,000–3 Lakhs</div>
-      </div>
-    </div>
-
-    <div class="reg-step">
-      <div class="reg-num">06</div>
-      <div class="reg-body">
-        <div class="reg-title">GST Registration + Mandatory FCO Packaging Labels</div>
-        <div class="reg-desc">Register for GST. Under FCO, every bag must display: product name, nutrient content, batch number, FCO license number, MRP, and manufacturer details. Since 2025, barcode/digital tracking is being mandated under "One Nation One Fertilizer" digital extension. Non-compliance = product seizure.</div>
-        <div class="reg-time">⏱ Ongoing compliance · Cost: ₹10,000–25,000 setup</div>
-      </div>
-    </div>
-
+    <div class="reg-step"><div class="reg-num">01</div><div class="reg-body"><div class="reg-title">Business Registration (MCA / Udyam)</div><div class="reg-desc">Register your entity — Pvt Ltd or LLP is recommended for credibility with dealers and government. Get UDYAM (MSME) registration simultaneously — this unlocks priority sector lending and subsidy eligibility.</div><div class="reg-time">⏱ 7–15 days · Cost: ₹5,000–20,000</div></div></div>
+    <div class="reg-step"><div class="reg-num">02</div><div class="reg-body"><div class="reg-title">FCO Manufacturing License — State Ag Department</div><div class="reg-desc">File Form D (in duplicate) with your State Department of Agriculture. Include MOA/AOA, site plan, lab equipment list, and premises details. The state sends an inspector for physical verification. Biofertilizers = White Category (easiest); Blending = Orange; Basic chemicals = Red (avoid).</div><div class="reg-time">⏱ 30–60 days · Cost: ₹10,000–50,000 (varies by state)</div></div></div>
+    <div class="reg-step"><div class="reg-num">03</div><div class="reg-body"><div class="reg-title">SPCB Consent to Establish & Operate</div><div class="reg-desc">State Pollution Control Board consent goes through 3 stages: document scrutiny → site inspection → NOC. White industry (biofertilizers) is fast-tracked. Orange takes longer. File this in parallel with FCO application.</div><div class="reg-time">⏱ 45–90 days · Cost: ₹15,000–60,000</div></div></div>
+    <div class="reg-step"><div class="reg-num">04</div><div class="reg-body"><div class="reg-title">Biofertilizer Product Registration (NCOF / Controller of Fertilizers)</div><div class="reg-desc">Each biofertilizer product must be registered with the National Centre of Organic Farming (NCOF) under FCO. Provisional registration is quicker. For permanent registration: NABL/GLP-certified lab analysis + ICAR/State Ag University agronomic trials across climate zones. Since July 2025, efficacy proof is mandatory before market launch.</div><div class="reg-time">⏱ 9–18 months for full registration · ₹2–8 Lakhs total</div></div></div>
+    <div class="reg-step"><div class="reg-num">05</div><div class="reg-body"><div class="reg-title">FSSAI / BIS / Export Certifications (if exporting)</div><div class="reg-desc">For organic export to EU or Japan: NPOP (National Programme for Organic Production) certification is mandatory. OMRI listing helps for the US. Budget 12–24 months for international certifications. Domestic organic label requires NPOP or PGS-India certification.</div><div class="reg-time">⏱ 12–24 months for export certs · ₹50,000–3 Lakhs</div></div></div>
+    <div class="reg-step"><div class="reg-num">06</div><div class="reg-body"><div class="reg-title">GST Registration + Mandatory FCO Packaging Labels</div><div class="reg-desc">Register for GST. Under FCO, every bag must display: product name, nutrient content, batch number, FCO license number, MRP, and manufacturer details. Since 2025, barcode/digital tracking is being mandated under "One Nation One Fertilizer" digital extension. Non-compliance = product seizure.</div><div class="reg-time">⏱ Ongoing compliance · Cost: ₹10,000–25,000 setup</div></div></div>
   </div>
 
-  <!-- INDUSTRY CATEGORIES BOX -->
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
-    <div style="background:white;border:1.5px solid #b2dfc0;border-radius:10px;padding:20px;">
-      <div style="font-size:24px;margin-bottom:8px;">🟢</div>
-      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--leaf);margin-bottom:6px;">White Industry</div>
-      <div style="font-size:12.5px;color:#4a5a4a;">Biofertilizer (no inorganic chemicals), vermicompost, organic manure. Easiest compliance. SPCB fast-track. <strong>Best entry point.</strong></div>
-    </div>
-    <div style="background:white;border:1.5px solid #f5e0a0;border-radius:10px;padding:20px;">
-      <div style="font-size:24px;margin-bottom:8px;">🟠</div>
-      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#7a4e00;margin-bottom:6px;">Orange Industry</div>
-      <div style="font-size:12.5px;color:#4a5a4a;">Fertilizer granulation, blending, formulation. Manageable compliance. 45–90 days for SPCB. Micronutrient blenders fall here.</div>
-    </div>
-    <div style="background:white;border:1.5px solid #f5c6c6;border-radius:10px;padding:20px;">
-      <div style="font-size:24px;margin-bottom:8px;">🔴</div>
-      <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--red);margin-bottom:6px;">Red Industry</div>
-      <div style="font-size:12.5px;color:#4a5a4a;">Basic fertilizer manufacturing (urea, DAP). Highly polluting. One of India's 17 restricted categories. <strong>Do not enter.</strong></div>
-    </div>
+    <div style="background:white;border:1.5px solid #b2dfc0;border-radius:10px;padding:20px;"><div style="font-size:24px;margin-bottom:8px;">🟢</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--leaf);margin-bottom:6px;">White Industry</div><div style="font-size:12.5px;color:#4a5a4a;">Biofertilizer (no inorganic chemicals), vermicompost, organic manure. Easiest compliance. SPCB fast-track. <strong>Best entry point.</strong></div></div>
+    <div style="background:white;border:1.5px solid #f5e0a0;border-radius:10px;padding:20px;"><div style="font-size:24px;margin-bottom:8px;">🟠</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:#7a4e00;margin-bottom:6px;">Orange Industry</div><div style="font-size:12.5px;color:#4a5a4a;">Fertilizer granulation, blending, formulation. Manageable compliance. 45–90 days for SPCB. Micronutrient blenders fall here.</div></div>
+    <div style="background:white;border:1.5px solid #f5c6c6;border-radius:10px;padding:20px;"><div style="font-size:24px;margin-bottom:8px;">🔴</div><div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;color:var(--red);margin-bottom:6px;">Red Industry</div><div style="font-size:12.5px;color:#4a5a4a;">Basic fertilizer manufacturing (urea, DAP). Highly polluting. One of India's 17 restricted categories. <strong>Do not enter.</strong></div></div>
   </div>
 
-  <!-- ══ SECTION 4: GOVERNMENT SCHEMES ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 04</div>
   <div class="sec-h">Government Money on the Table</div>
   <p class="sec-p">These are real schemes with real INR budgets. If you're not tapping these, you're leaving money behind. Your competitors will.</p>
 
   <div class="policy-grid">
-
-    <div class="pol">
-      <div class="pol-scheme">PM-PRANAM Scheme</div>
-      <div class="pol-name">Promote Biofertilizer Adoption</div>
-      <div class="pol-amt">₹800 Cr+ savings already</div>
-      <div class="pol-desc">States that reduce chemical fertilizer consumption get 50% of subsidy savings as grants. All 36 states/UTs now included (Aug 2024). Direct pull for bio/organic fertilizer manufacturers. 14 states already cut usage by 15L tonnes. Your products become the vehicle for state grants.</div>
-    </div>
-
-    <div class="pol">
-      <div class="pol-scheme">Gobardhan / MDA Scheme</div>
-      <div class="pol-name">Organic Manure Market Support</div>
-      <div class="pol-amt">₹1,451 Cr allocated</div>
-      <div class="pol-desc">Ministry of Chemicals approved ₹1,451 crore for Market Development Assistance to promote FOM, Liquid FOM, and PROM from biogas plants. ₹1,500/tonne subsidy on organic fertilizers produced from Gobardhan plants. Set up a unit sourcing from CBG plants → automatic MDA eligibility.</div>
-    </div>
-
-    <div class="pol">
-      <div class="pol-scheme">Nutrient Based Subsidy (NBS)</div>
-      <div class="pol-name">P&K Fertilizer Support</div>
-      <div class="pol-amt">₹54,310 Cr (FY25)</div>
-      <div class="pol-desc">For manufacturers of P & K fertilizers. Fixed subsidy per kg of nutrient content. If you make specialty micronutrient blends with P or K content, you may be NBS-eligible — check with a consultant. Subsidy is paid to manufacturer, not farmer, improving your cash flow.</div>
-    </div>
-
-    <div class="pol">
-      <div class="pol-scheme">NABARD Priority Lending</div>
-      <div class="pol-name">Agri-Input Manufacturing Loans</div>
-      <div class="pol-amt">Priority sector — 7–9% rate</div>
-      <div class="pol-desc">MSME-registered fertilizer manufacturers are eligible for priority sector agriculture loans via NABARD-linked banks. Lower interest rate, easier collateral norms. UDYAM registration is the entry ticket. Budget ₹2–5L for a proper DPR (Detailed Project Report) to present to bank.</div>
-    </div>
-
-    <div class="pol">
-      <div class="pol-scheme">Natural Farming Mission</div>
-      <div class="pol-name">Union Budget 2025–26</div>
-      <div class="pol-amt">Dedicated biofertilizer capacity fund</div>
-      <div class="pol-desc">Constituted January 2025. Dedicated funding for biofertilizer production capacity and farmer training across priority states. State-level implementation means approach your state agriculture dept for specific grant/subsidy windows. States like Gujarat, Maharashtra, Karnataka active.</div>
-    </div>
-
-    <div class="pol">
-      <div class="pol-scheme">Neem Coated Urea / Nano Urea</div>
-      <div class="pol-name">Partner / Distribute IFFCO Products</div>
-      <div class="pol-amt">80% N-efficiency vs 30% regular</div>
-      <div class="pol-desc">IFFCO's Nano Urea has government-notified specifications — faster regulatory path. Sub-dealer distribution partnership requires minimal capital. Good way to build distribution muscle before you launch your own products. IFFCO actively wants distribution partners in Tier-2 / Tier-3 markets.</div>
-    </div>
-
+    <div class="pol"><div class="pol-scheme">PM-PRANAM Scheme</div><div class="pol-name">Promote Biofertilizer Adoption</div><div class="pol-amt">₹800 Cr+ savings already</div><div class="pol-desc">States that reduce chemical fertilizer consumption get 50% of subsidy savings as grants. All 36 states/UTs now included (Aug 2024). Direct pull for bio/organic fertilizer manufacturers. 14 states already cut usage by 15L tonnes. Your products become the vehicle for state grants.</div></div>
+    <div class="pol"><div class="pol-scheme">Gobardhan / MDA Scheme</div><div class="pol-name">Organic Manure Market Support</div><div class="pol-amt">₹1,451 Cr allocated</div><div class="pol-desc">Ministry of Chemicals approved ₹1,451 crore for Market Development Assistance to promote FOM, Liquid FOM, and PROM from biogas plants. ₹1,500/tonne subsidy on organic fertilizers produced from Gobardhan plants. Set up a unit sourcing from CBG plants → automatic MDA eligibility.</div></div>
+    <div class="pol"><div class="pol-scheme">Nutrient Based Subsidy (NBS)</div><div class="pol-name">P&K Fertilizer Support</div><div class="pol-amt">₹54,310 Cr (FY25)</div><div class="pol-desc">For manufacturers of P & K fertilizers. Fixed subsidy per kg of nutrient content. If you make specialty micronutrient blends with P or K content, you may be NBS-eligible — check with a consultant. Subsidy is paid to manufacturer, not farmer, improving your cash flow.</div></div>
+    <div class="pol"><div class="pol-scheme">NABARD Priority Lending</div><div class="pol-name">Agri-Input Manufacturing Loans</div><div class="pol-amt">Priority sector — 7–9% rate</div><div class="pol-desc">MSME-registered fertilizer manufacturers are eligible for priority sector agriculture loans via NABARD-linked banks. Lower interest rate, easier collateral norms. UDYAM registration is the entry ticket. Budget ₹2–5L for a proper DPR (Detailed Project Report) to present to bank.</div></div>
+    <div class="pol"><div class="pol-scheme">Natural Farming Mission</div><div class="pol-name">Union Budget 2025–26</div><div class="pol-amt">Dedicated biofertilizer capacity fund</div><div class="pol-desc">Constituted January 2025. Dedicated funding for biofertilizer production capacity and farmer training across priority states. State-level implementation means approach your state agriculture dept for specific grant/subsidy windows. States like Gujarat, Maharashtra, Karnataka active.</div></div>
+    <div class="pol"><div class="pol-scheme">Neem Coated Urea / Nano Urea</div><div class="pol-name">Partner / Distribute IFFCO Products</div><div class="pol-amt">80% N-efficiency vs 30% regular</div><div class="pol-desc">IFFCO's Nano Urea has government-notified specifications — faster regulatory path. Sub-dealer distribution partnership requires minimal capital. Good way to build distribution muscle before you launch your own products. IFFCO actively wants distribution partners in Tier-2 / Tier-3 markets.</div></div>
   </div>
 
-  <!-- ══ SECTION 5: BEST STATES TO SET UP ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 05</div>
   <div class="sec-h">Where in India to Set Up First</div>
   <p class="sec-p">State matters hugely — for raw material access, farmer demand, ease of FCO licensing, and government support. Here are the honest rankings.</p>
 
   <div class="state-row">
-    <div class="state-chip">
-      <div class="state-rank">🔥 Priority 1</div>
-      <div class="state-name">Maharashtra</div>
-      <div class="state-why">Cotton, sugarcane, grapes — premium micronutrient demand. Strong horticulture export pipeline.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">🔥 Priority 1</div>
-      <div class="state-name">Gujarat</div>
-      <div class="state-why">Groundnut, cotton. State govt agri-startup friendly. IPL Biologicals (major player) already here — indicates strong ecosystem.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">🔥 Priority 1</div>
-      <div class="state-name">Karnataka</div>
-      <div class="state-why">Fruits, vegetables, floriculture. Coffee. Natural farming push. Strong ICAR/university trial network.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">✅ Strong</div>
-      <div class="state-name">Punjab / Haryana</div>
-      <div class="state-why">Heavy chemical overuse = biggest opportunity for biofertilizer pivot. Govt actively pushing PRANAM-linked reduction. High farmer income = willingness to pay.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">✅ Strong</div>
-      <div class="state-name">Andhra Pradesh</div>
-      <div class="state-why">Natural farming heavily promoted by state government. Biofertilizer subsidy support strong. Rice and horticulture dominate.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">✅ Strong</div>
-      <div class="state-name">Madhya Pradesh</div>
-      <div class="state-why">Soybean, wheat, maize belt. Large arable area. Lower setup costs. NAFED biofertilizer unit at Indore = proven market.</div>
-    </div>
-    <div class="state-chip">
-      <div class="state-rank">⚡ Niche</div>
-      <div class="state-name">Himachal / Uttarakhand</div>
-      <div class="state-why">Apple, vegetables. Organic farming premium. Small market but extremely high per-unit margins. Export corridor active.</div>
-    </div>
+    <div class="state-chip"><div class="state-rank">🔥 Priority 1</div><div class="state-name">Maharashtra</div><div class="state-why">Cotton, sugarcane, grapes — premium micronutrient demand. Strong horticulture export pipeline.</div></div>
+    <div class="state-chip"><div class="state-rank">🔥 Priority 1</div><div class="state-name">Gujarat</div><div class="state-why">Groundnut, cotton. State govt agri-startup friendly. IPL Biologicals (major player) already here — indicates strong ecosystem.</div></div>
+    <div class="state-chip"><div class="state-rank">🔥 Priority 1</div><div class="state-name">Karnataka</div><div class="state-why">Fruits, vegetables, floriculture. Coffee. Natural farming push. Strong ICAR/university trial network.</div></div>
+    <div class="state-chip"><div class="state-rank">✅ Strong</div><div class="state-name">Punjab / Haryana</div><div class="state-why">Heavy chemical overuse = biggest opportunity for biofertilizer pivot. Govt actively pushing PRANAM-linked reduction. High farmer income = willingness to pay.</div></div>
+    <div class="state-chip"><div class="state-rank">✅ Strong</div><div class="state-name">Andhra Pradesh</div><div class="state-why">Natural farming heavily promoted by state government. Biofertilizer subsidy support strong. Rice and horticulture dominate.</div></div>
+    <div class="state-chip"><div class="state-rank">✅ Strong</div><div class="state-name">Madhya Pradesh</div><div class="state-why">Soybean, wheat, maize belt. Large arable area. Lower setup costs. NAFED biofertilizer unit at Indore = proven market.</div></div>
+    <div class="state-chip"><div class="state-rank">⚡ Niche</div><div class="state-name">Himachal / Uttarakhand</div><div class="state-why">Apple, vegetables. Organic farming premium. Small market but extremely high per-unit margins. Export corridor active.</div></div>
   </div>
 
-  <!-- ══ SECTION 6: RISKS ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 06</div>
   <div class="sec-h">India-Specific Risks — Know Before You Start</div>
 
   <div class="warn-grid">
-    <div class="warn red">
-      <div class="warn-ico">⚖️</div>
-      <div class="warn-title">July 2025 Efficacy Mandate</div>
-      <div class="warn-body">India's Agriculture Minister ordered that biofertilizer companies must publish <strong>scientific efficacy proof before launch</strong>. This is not optional. Fake or mislabelled products are being cracked down on. Budget for ICAR/university trials — this is now your compliance cost, not just a nice-to-have.</div>
-    </div>
-    <div class="warn red">
-      <div class="warn-ico">💰</div>
-      <div class="warn-title">Price Sensitivity of Indian Farmers</div>
-      <div class="warn-body">Urea MRP has been fixed at <strong>₹242/45kg bag since 2018</strong>. Farmers are trained to buy on subsidy. Biofertilizers and specialty products are <em>not subsidised</em> — you are selling a premium product into a subsidy-conditioned market. Farmer education is not optional. It is your sales strategy.</div>
-    </div>
-    <div class="warn amber">
-      <div class="warn-ico">🏗️</div>
-      <div class="warn-title">FCO Licensing is State-Specific</div>
-      <div class="warn-body">The FCO is central law but enforcement is state-level. Every state has slightly different forms, fees, timelines, and inspectors. What works in Gujarat may not work the same way in UP. <strong>Hire a state-specific regulatory consultant</strong> — budget ₹50,000–1.5L for this.</div>
-    </div>
-    <div class="warn amber">
-      <div class="warn-ico">🕒</div>
-      <div class="warn-title">Seasonal Cash Flow</div>
-      <div class="warn-body">Indian fertilizer demand is heavily seasonal — Kharif (June–Sept) and Rabi (Oct–Jan) peaks. You will have months of near-zero sales. <strong>Working capital management is survival-critical.</strong> Keep 3–4 months of fixed costs as a cash buffer before launch.</div>
-    </div>
-    <div class="warn amber">
-      <div class="warn-ico">🔒</div>
-      <div class="warn-title">Distributor Lock-In by Incumbents</div>
-      <div class="warn-body">Large players (Coromandel, UPL, IFFCO, Zuari) have decades of dealer relationships. Breaking into an established district market requires patient relationship-building and aggressive margin-sharing. <strong>Target districts where no strong incumbent has deep penetration.</strong></div>
-    </div>
-    <div class="warn green">
-      <div class="warn-ico">🌱</div>
-      <div class="warn-title">The Structural Tailwind Is Enormous</div>
-      <div class="warn-body">The Indian government spent over ₹2 lakh crore on fertilizer subsidies in a year and is now <strong>actively paying states to switch to bio alternatives</strong>. 14 states already reduced chemical use by 15 lakh tonnes. Every tonne they cut is a tonne your product can replace. The policy direction has never been clearer.</div>
-    </div>
+    <div class="warn red"><div class="warn-ico">⚖️</div><div class="warn-title">July 2025 Efficacy Mandate</div><div class="warn-body">India's Agriculture Minister ordered that biofertilizer companies must publish <strong>scientific efficacy proof before launch</strong>. This is not optional. Fake or mislabelled products are being cracked down on. Budget for ICAR/university trials — this is now your compliance cost, not just a nice-to-have.</div></div>
+    <div class="warn red"><div class="warn-ico">💰</div><div class="warn-title">Price Sensitivity of Indian Farmers</div><div class="warn-body">Urea MRP has been fixed at <strong>₹242/45kg bag since 2018</strong>. Farmers are trained to buy on subsidy. Biofertilizers and specialty products are <em>not subsidised</em> — you are selling a premium product into a subsidy-conditioned market. Farmer education is not optional. It is your sales strategy.</div></div>
+    <div class="warn amber"><div class="warn-ico">🏗️</div><div class="warn-title">FCO Licensing is State-Specific</div><div class="warn-body">The FCO is central law but enforcement is state-level. Every state has slightly different forms, fees, timelines, and inspectors. What works in Gujarat may not work the same way in UP. <strong>Hire a state-specific regulatory consultant</strong> — budget ₹50,000–1.5L for this.</div></div>
+    <div class="warn amber"><div class="warn-ico">🕒</div><div class="warn-title">Seasonal Cash Flow</div><div class="warn-body">Indian fertilizer demand is heavily seasonal — Kharif (June–Sept) and Rabi (Oct–Jan) peaks. You will have months of near-zero sales. <strong>Working capital management is survival-critical.</strong> Keep 3–4 months of fixed costs as a cash buffer before launch.</div></div>
+    <div class="warn amber"><div class="warn-ico">🔒</div><div class="warn-title">Distributor Lock-In by Incumbents</div><div class="warn-body">Large players (Coromandel, UPL, IFFCO, Zuari) have decades of dealer relationships. Breaking into an established district market requires patient relationship-building and aggressive margin-sharing. <strong>Target districts where no strong incumbent has deep penetration.</strong></div></div>
+    <div class="warn green"><div class="warn-ico">🌱</div><div class="warn-title">The Structural Tailwind Is Enormous</div><div class="warn-body">The Indian government spent over ₹2 lakh crore on fertilizer subsidies in a year and is now <strong>actively paying states to switch to bio alternatives</strong>. 14 states already reduced chemical use by 15 lakh tonnes. Every tonne they cut is a tonne your product can replace. The policy direction has never been clearer.</div></div>
   </div>
 
-  <!-- ══ SECTION 7: FIRST 90 DAYS CHECKLIST ══ -->
   <div class="divider"></div>
   <div class="sec-tag">Section 07</div>
   <div class="sec-h">Your First 90 Days — Exactly What to Do</div>
   <p class="sec-p">Most businesses die in the planning phase. This is your action checklist. Do these in parallel, not sequentially.</p>
 
   <div class="check-grid">
-
-    <div class="check-box">
-      <div class="check-title">🏢 Business Setup</div>
-      <ul class="check-list">
-        <li>Register Pvt Ltd or LLP on MCA portal</li>
-        <li>Get UDYAM (MSME) certificate immediately after</li>
-        <li>Open current account with bank (SIDBI partner preferred for future loans)</li>
-        <li>Decide state of incorporation — Maharashtra, Gujarat, or Karnataka recommended</li>
-        <li>Hire a local FCO regulatory consultant (₹50K–1.5L engagement)</li>
-      </ul>
-    </div>
-
-    <div class="check-box">
-      <div class="check-title">📋 Regulatory Pipeline</div>
-      <ul class="check-list">
-        <li>File Form D with State Agriculture Dept for manufacturing license</li>
-        <li>Apply for SPCB Consent to Establish simultaneously</li>
-        <li>Contact NCOF (Ghaziabad) for biofertilizer provisional registration forms</li>
-        <li>Identify ICAR institute or State Ag University for efficacy trial MoU</li>
-        <li>Get NABL-accredited lab contact for product analysis</li>
-      </ul>
-    </div>
-
-    <div class="check-box">
-      <div class="check-title">🔬 Product Development</div>
-      <ul class="check-list">
-        <li>Shortlist 2–3 microbial strains from ICAR strain bank (free access)</li>
-        <li>Decide: liquid biofertilizer vs granular (liquid = higher shelf life, better integration with drip irrigation)</li>
-        <li>Identify contract manufacturer for trial batch production (saves CapEx)</li>
-        <li>Conduct zone-wise field trials — min 3 agroclimatic zones for NCOF registration</li>
-        <li>Design FCO-compliant packaging labels (barcode mandatory from 2025)</li>
-      </ul>
-    </div>
-
-    <div class="check-box">
-      <div class="check-title">💼 Commercial Groundwork</div>
-      <ul class="check-list">
-        <li>Visit 20 agri-input dealers in your target district — understand shelf economics</li>
-        <li>Identify FPOs (Farmer Producer Organisations) as bulk institutional buyers</li>
-        <li>Approach state agriculture dept for inclusion in PRANAM push list</li>
-        <li>Check NABARD / SIDBI MSME loan scheme eligibility with your bank</li>
-        <li>Shortlist 1 organic export agent if export is part of plan (APEDA registered)</li>
-      </ul>
-    </div>
-
+    <div class="check-box"><div class="check-title">🏢 Business Setup</div><ul class="check-list"><li>Register Pvt Ltd or LLP on MCA portal</li><li>Get UDYAM (MSME) certificate immediately after</li><li>Open current account with bank (SIDBI partner preferred for future loans)</li><li>Decide state of incorporation — Maharashtra, Gujarat, or Karnataka recommended</li><li>Hire a local FCO regulatory consultant (₹50K–1.5L engagement)</li></ul></div>
+    <div class="check-box"><div class="check-title">📋 Regulatory Pipeline</div><ul class="check-list"><li>File Form D with State Agriculture Dept for manufacturing license</li><li>Apply for SPCB Consent to Establish simultaneously</li><li>Contact NCOF (Ghaziabad) for biofertilizer provisional registration forms</li><li>Identify ICAR institute or State Ag University for efficacy trial MoU</li><li>Get NABL-accredited lab contact for product analysis</li></ul></div>
+    <div class="check-box"><div class="check-title">🔬 Product Development</div><ul class="check-list"><li>Shortlist 2–3 microbial strains from ICAR strain bank (free access)</li><li>Decide: liquid biofertilizer vs granular (liquid = higher shelf life, better integration with drip irrigation)</li><li>Identify contract manufacturer for trial batch production (saves CapEx)</li><li>Conduct zone-wise field trials — min 3 agroclimatic zones for NCOF registration</li><li>Design FCO-compliant packaging labels (barcode mandatory from 2025)</li></ul></div>
+    <div class="check-box"><div class="check-title">💼 Commercial Groundwork</div><ul class="check-list"><li>Visit 20 agri-input dealers in your target district — understand shelf economics</li><li>Identify FPOs (Farmer Producer Organisations) as bulk institutional buyers</li><li>Approach state agriculture dept for inclusion in PRANAM push list</li><li>Check NABARD / SIDBI MSME loan scheme eligibility with your bank</li><li>Shortlist 1 organic export agent if export is part of plan (APEDA registered)</li></ul></div>
   </div>
 
-  <!-- FINAL CALLOUT -->
   <div class="callout">
     <p>"One last thing: <strong>do not skip the farmers.</strong> India's fertilizer market isn't won in offices or on tenders — it's won in fields. Before you spend a rupee on machinery, spend a month visiting farmers in your target geography. Understand what they grow, what they pay, and what their dealer recommends. Everything you learn in those 30 days will be worth more than any market research report you can buy. The farmers will tell you exactly what to build."</p>
     <div class="callout-src">— The non-negotiable advice before you start</div>
   </div>
 
-</div><!-- /wrap -->
+</div>
 
-<footer>
-  India Fertilizer Business Playbook · April 2026 · For Founder Use Only · Sources: Govt of India PIB, FCO 1985 (amended 2025), NABARD, NCOF, ICAR, Enterclimate, Expert Market Research · All INR figures are estimates for small-to-mid scale operations
-</footer>
+<footer>India Fertilizer Business Playbook · April 2026 · For Founder Use Only · Sources: Govt of India PIB, FCO 1985 (amended 2025), NABARD, NCOF, ICAR, Enterclimate, Expert Market Research · All INR figures are estimates for small-to-mid scale operations</footer>
 
 </body>
 </html>
