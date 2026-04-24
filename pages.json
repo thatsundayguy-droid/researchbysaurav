@@ -1,5 +1,5 @@
 [
-  { "title": "Placeholder", "file": "Index.html", "emoji": "📋" }
- { "title": "Fertilizer Industry Research", "file": "Research.html"}
-
+  { "title": "India Playbook", "file": "Index.html", "emoji": "📋" },
+  { "title": "Sector Report", "file": "Research.html", "emoji": "📄" },
+  { "title": "Summary", "file": "Summary.html", "emoji": "⚡" }
 ]

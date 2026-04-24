@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Fertilizer Market — Executive Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; width: 100%; }
+
+  :root {
+    --ink:        #1a1816;
+    --ink-mid:    #3d3a36;
+    --ink-muted:  #7a7570;
+    --rule:       #d4cfc9;
+    --bg:         #f7f4ef;
+    --bg-warm:    #ede9e2;
+    --bg-card:    #ffffff;
+    --accent:     #2e5b3c;
+    --accent-dark:#1e3d29;
+    --accent-light:#e8f0eb;
+    --amber:      #b08d3a;
+    --amber-light:#f7f0e0;
+    --red:        #7a3b1e;
+    --red-light:  #f5ece7;
+    --blue:       #1e3d6b;
+    --blue-light: #e8eef5;
+    --serif:      'Playfair Display', Georgia, serif;
+    --body:       'Source Serif 4', Georgia, serif;
+    --mono:       'JetBrains Mono', monospace;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 300;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--accent-dark);
+    border-bottom: 1px solid rgba(168,200,178,0.2);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.4);
+    white-space: nowrap;
+  }
+  .nav-links { display: flex; gap: 4px; overflow-x: auto; }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(240,236,228,0.45);
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-link:hover { background: rgba(168,200,178,0.1); color: #a8c8b2; }
+  .nav-link.active { background: rgba(168,200,178,0.15); color: #a8c8b2; border-color: rgba(168,200,178,0.25); }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--accent-dark);
+    padding: 4rem 5rem 3.5rem;
+    color: #f0ece4;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(255,255,255,0.025) 48px, rgba(255,255,255,0.025) 49px);
+    pointer-events: none;
+  }
+  .cover-inner { position: relative; z-index: 1; max-width: 700px; }
+  .cover-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.5);
+    margin-bottom: 1.5rem;
+  }
+  .cover h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #f0ece4;
+  }
+  .cover h1 em { font-style: italic; color: #a8c8b2; }
+  .cover-sub {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: rgba(240,236,228,0.65);
+    font-weight: 300;
+    max-width: 520px;
+    line-height: 1.65;
+  }
+
+  /* ── 3 BIG NUMBERS ── */
+  .big-nums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 0.5px solid var(--rule);
+    margin: 2.5rem 0 0;
+  }
+  .big-num {
+    background: var(--accent-dark);
+    padding: 1.5rem 2rem;
+  }
+  .big-num-val {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #a8c8b2;
+    line-height: 1;
+  }
+  .big-num-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.45);
+    margin-top: 0.4rem;
+  }
+
+  /* ── MAIN ── */
+  main { max-width: 860px; margin: 0 auto; padding: 4rem 3rem 5rem; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 4rem; }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--ink);
+    line-height: 1.2;
+  }
+
+  p { font-size: 0.95rem; color: var(--ink-mid); margin-bottom: 1rem; line-height: 1.8; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── PLAIN ENGLISH BOX ── */
+  .plain-box {
+    background: var(--bg-card);
+    border: 0.5px solid var(--rule);
+    padding: 1.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .plain-box p {
+    font-size: 1rem;
+    color: var(--ink-mid);
+    line-height: 1.85;
+    margin-bottom: 0;
+  }
+  .plain-box strong { color: var(--ink); font-weight: 600; }
+
+  /* ── 5 THINGS TO KNOW ── */
+  .know-list { list-style: none; margin: 0; padding: 0; }
+  .know-item {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    border-bottom: 0.5px solid var(--rule);
+    align-items: flex-start;
+  }
+  .know-item:last-child { border-bottom: none; }
+  .know-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    font-weight: 500;
+    min-width: 1.5rem;
+    padding-top: 3px;
+  }
+  .know-body h4 {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .know-body p { font-size: 0.86rem; margin: 0; }
+
+  /* ── OPPORTUNITY TABLE ── */
+  .opp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0; }
+  .opp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+    min-width: 480px;
+  }
+  .opp-table thead tr { background: var(--ink); color: #f0ece4; }
+  .opp-table thead th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    text-align: left;
+  }
+  .opp-table tbody tr { border-bottom: 0.5px solid var(--rule); }
+  .opp-table tbody tr:nth-child(even) { background: var(--bg); }
+  .opp-table tbody td { padding: 0.7rem 1rem; color: var(--ink-mid); vertical-align: top; }
+  .opp-table tbody td:first-child { font-weight: 400; color: var(--ink); }
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .tag-green { background: var(--accent-light); color: var(--accent-dark); }
+  .tag-amber { background: var(--amber-light); color: var(--amber); }
+  .tag-red   { background: var(--red-light); color: var(--red); }
+  .tag-blue  { background: var(--blue-light); color: var(--blue); }
+
+  /* ── RISK CARDS ── */
+  .risk-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--rule); border: 0.5px solid var(--rule); margin: 0; }
+  .risk-card { background: var(--bg-card); padding: 1.5rem; }
+  .risk-card-icon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+  .risk-card-title { font-family: var(--body); font-weight: 600; font-size: 0.92rem; color: var(--ink); margin-bottom: 0.5rem; }
+  .risk-card-body { font-size: 0.82rem; color: var(--ink-muted); line-height: 1.65; }
+
+  /* ── HORIZON ── */
+  .horizon-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    border: 0.5px solid var(--rule);
+    margin-bottom: -0.5px;
+    background: var(--bg-card);
+  }
+  .horizon-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #f0ece4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .horizon-label.near  { background: var(--accent-dark); }
+  .horizon-label.mid   { background: var(--accent); }
+  .horizon-label.long  { background: var(--ink-muted); }
+  .horizon-content { padding: 1rem 1.5rem; font-size: 0.86rem; color: var(--ink-mid); }
+  .horizon-content ul { padding-left: 1.1rem; }
+  .horizon-content li { margin-bottom: 0.35rem; line-height: 1.6; }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0 0;
+    background: var(--accent-light);
+  }
+  .pull-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent-dark);
+    margin: 0;
+    line-height: 1.75;
+  }
+
+  /* ── DIVIDER ── */
+  hr { border: none; border-top: 0.5px solid var(--rule); margin: 3rem 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--ink);
+    padding-top: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  /* ══ MOBILE ══ */
+  @media (max-width: 640px) {
+    .site-nav { padding: 0 12px; height: 48px; }
+    .nav-brand { display: none; }
+    .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 9px; padding: 5px 10px; }
+
+    .cover { padding: 2rem 1.25rem 2rem; }
+    .cover h1 { font-size: 1.75rem; }
+    .cover-sub { font-size: 0.9rem; }
+    .big-nums { grid-template-columns: 1fr; gap: 1px; margin-top: 1.75rem; }
+    .big-num { padding: 1rem 1.25rem; }
+    .big-num-val { font-size: 1.6rem; }
+
+    main { padding: 2.5rem 1.25rem 3rem; }
+    .section { margin-bottom: 2.5rem; }
+    .section-title { font-size: 1.2rem; }
+
+    .plain-box { padding: 1.25rem; }
+
+    .know-item { gap: 0.75rem; padding: 1rem 0; }
+    .know-body h4 { font-size: 0.9rem; }
+
+    .risk-grid { grid-template-columns: 1fr; }
+    .risk-card { padding: 1.25rem; }
+
+    .horizon-row { grid-template-columns: 1fr; }
+    .horizon-label { padding: 0.6rem 1rem; justify-content: flex-start; }
+    .horizon-content { padding: 0.85rem 1rem; font-size: 0.82rem; }
+
+    footer { flex-direction: column; gap: 1rem; }
+    footer div:last-child { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── AUTO NAV ── -->
+<nav class="site-nav">
+  <div class="nav-brand">🌿 Fertilizer Research</div>
+  <div class="nav-links" id="nav-links"></div>
+</nav>
+<script>
+  fetch('pages.json')
+    .then(r => r.json())
+    .then(pages => {
+      const current = location.pathname.split('/').pop() || 'Summary.html';
+      const container = document.getElementById('nav-links');
+      container.innerHTML = pages.map(p =>
+        `<a href="${p.file}" class="nav-link${current === p.file ? ' active' : ''}">${p.emoji} ${p.title}</a>`
+      ).join('');
+    })
+    .catch(() => {
+      document.getElementById('nav-links').innerHTML =
+        '<a href="Summary.html" class="nav-link active">⚡ Summary</a>';
+    });
+</script>
+
+<!-- ── COVER ── -->
+<div class="cover">
+  <div class="cover-inner">
+    <p class="cover-label">India Fertilizer Market &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Executive Summary</p>
+    <h1>The <em>Indian</em> Fertilizer Market<br>— In Plain English</h1>
+    <p class="cover-sub">Everything from the full sector report, distilled into what actually matters. Read this in 5 minutes. Understand the market in full.</p>
+    <div class="big-nums">
+      <div class="big-num">
+        <div class="big-num-val">₹1,021 Bn</div>
+        <div class="big-num-label">Market size 2025</div>
+      </div>
+      <div class="big-num">
+        <div class="big-num-val">4.2%</div>
+        <div class="big-num-label">Annual growth rate</div>
+      </div>
+      <div class="big-num">
+        <div class="big-num-val">41.8 MT</div>
+        <div class="big-num-label">Tonnes consumed annually</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- WHAT IS THIS MARKET -->
+  <div class="section">
+    <div class="section-label">The One-Paragraph Version</div>
+    <h2 class="section-title">What This Market Actually Is</h2>
+    <div class="plain-box">
+      <p>India is the world's <strong>second-largest fertilizer consumer</strong> after China, feeding 1.4 billion people with 41.8 million tonnes of fertilizer every year. The government spends over <strong>₹1.64 trillion annually subsidising fertilizers</strong> — keeping urea at an artificially low price that hasn't changed since 2018 — which means farmers are hooked on cheap nitrogen and the government can't easily stop paying the bill. The sector is growing steadily at ~4% a year, but the real action is in <strong>biofertilizers, specialty nutrients, and nano-fertilizers</strong> — segments where margins are higher, competition is lower, and policy is actively pushing adoption. India also <strong>imports 100% of its potash</strong> and large amounts of phosphate, making it deeply exposed to global supply shocks and geopolitics.</p>
+    </div>
+  </div>
+
+  <!-- 5 THINGS TO KNOW -->
+  <div class="section">
+    <div class="section-label">The Non-Negotiables</div>
+    <h2 class="section-title">5 Things You Must Know</h2>
+    <ul class="know-list">
+      <li class="know-item">
+        <span class="know-num">01</span>
+        <div class="know-body">
+          <h4>Urea has been frozen at ₹242 per bag since 2018</h4>
+          <p>The government fixes the retail price of urea — the most widely used fertilizer. Farmers pay ₹242 for a 45kg bag regardless of what it costs to produce or import. The difference is paid as a subsidy, which has hit ₹2.55 trillion in a single year. This creates a market distortion where farmers overuse nitrogen and underuse everything else — which is both an agronomic problem and the entire reason the government is now pushing alternatives.</p>
+        </div>
+      </li>
+      <li class="know-item">
+        <span class="know-num">02</span>
+        <div class="know-body">
+          <h4>India imports 100% of its potash and ~50% of its DAP</h4>
+          <p>India has no domestic source of potassium. Every bag of MOP (muriate of potash) comes from Canada, Russia, Belarus, or Jordan. When the Russia-Ukraine war hit, global fertilizer prices spiked and India's import bill ballooned overnight. The government now has a 5-year supply agreement with Saudi Arabia's Maaden for phosphate, but potash remains fully exposed. This is a structural vulnerability that affects every stakeholder in the sector.</p>
+        </div>
+      </li>
+      <li class="know-item">
+        <span class="know-num">03</span>
+        <div class="know-body">
+          <h4>There are two separate subsidy regimes — and they work very differently</h4>
+          <p>Urea sits under its own price control scheme — the government sets the price and pays manufacturers the difference. Everything else (DAP, NPK, MOP, SSP) falls under the Nutrient-Based Subsidy (NBS) scheme, where a fixed subsidy per kilogram of nutrient is paid, and manufacturers set their own retail prices. The NBS system creates more market-like behaviour; the urea system creates distortions. Reform of urea's status — if it ever happens — would be the single biggest structural event in the sector.</p>
+        </div>
+      </li>
+      <li class="know-item">
+        <span class="know-num">04</span>
+        <div class="know-body">
+          <h4>Nano-fertilizers are not a gimmick — IFFCO has already proven them at scale</h4>
+          <p>IFFCO's Nano Urea uses 1 bottle (500ml) to replace 1 bag (45kg) of conventional urea — same nutrient effect, 10x less volume, dramatically lower logistics cost. The government has formally notified nano-urea and nano-DAP specifications under the Fertiliser Control Order, which fast-tracks regulatory adoption. Two new IFFCO Nano DAP plants in Uttar Pradesh are targeting 2 lakh bottles per day combined. If adoption scales as projected, it could materially reduce the subsidy burden over the next decade.</p>
+        </div>
+      </li>
+      <li class="know-item">
+        <span class="know-num">05</span>
+        <div class="know-body">
+          <h4>North India dominates, but the fastest growth is happening elsewhere</h4>
+          <p>North India (Punjab, UP, Haryana) accounts for ~33% of the market — legacy of the Green Revolution. But the fastest-growing segments are horticulture (6.5% CAGR), biofertilizers, and water-soluble specialty products — all concentrated in Maharashtra, Gujarat, Karnataka, Andhra Pradesh, and Himachal Pradesh. If you are thinking about where to operate, follow the horticulture belt, not the wheat-rice corridor.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- OPPORTUNITY SNAPSHOT -->
+  <div class="section">
+    <div class="section-label">Where the Money Is</div>
+    <h2 class="section-title">Segment Opportunity at a Glance</h2>
+    <div class="opp-table-wrap">
+      <table class="opp-table">
+        <thead>
+          <tr>
+            <th>Segment</th>
+            <th>Market Signal</th>
+            <th>Why It Matters</th>
+            <th>Barrier to Entry</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Biofertilizers</td>
+            <td><span class="tag tag-green">10–12% CAGR</span></td>
+            <td>Government actively paying states to switch. PM-PRANAM scheme creates policy pull.</td>
+            <td><span class="tag tag-green">Low</span></td>
+          </tr>
+          <tr>
+            <td>Specialty / Micronutrients</td>
+            <td><span class="tag tag-green">18–22% growth</span></td>
+            <td>~50% of India's soils are zinc deficient. Horticulture farmers pay premium.</td>
+            <td><span class="tag tag-green">Low–Medium</span></td>
+          </tr>
+          <tr>
+            <td>Nano-Fertilizers</td>
+            <td><span class="tag tag-amber">Early stage</span></td>
+            <td>FCO-approved. Government backed. Could halve conventional urea volumes long term.</td>
+            <td><span class="tag tag-amber">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Water-Soluble / Fertigation</td>
+            <td><span class="tag tag-green">Growing fast</span></td>
+            <td>Drip irrigation expansion across Maharashtra, Gujarat creating new demand corridor.</td>
+            <td><span class="tag tag-amber">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Organic / Vermicompost</td>
+            <td><span class="tag tag-green">Export premium</span></td>
+            <td>EU/Japan/US buyers pay 3–5x domestic price. NPOP certification opens export doors.</td>
+            <td><span class="tag tag-green">Low</span></td>
+          </tr>
+          <tr>
+            <td>Conventional Urea / DAP</td>
+            <td><span class="tag tag-amber">Mature / Stable</span></td>
+            <td>Massive volumes but thin margins, heavy regulation, subsidy dependency.</td>
+            <td><span class="tag tag-red">Very High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3 RISKS -->
+  <div class="section">
+    <div class="section-label">What Could Go Wrong</div>
+    <h2 class="section-title">3 Risks in Plain English</h2>
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-card-icon">🌍</div>
+        <div class="risk-card-title">Geopolitical supply shock</div>
+        <div class="risk-card-body">Russia controls ~20% of global fertilizer exports. Any new sanctions, conflict escalation, or trade route disruption immediately spikes input costs for Indian manufacturers and importers. India experienced this directly in 2022 — prices doubled in months. With 100% potash import dependency, there is no domestic buffer.</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-icon">💸</div>
+        <div class="risk-card-title">The subsidy bill is unsustainable</div>
+        <div class="risk-card-body">At peak, India spent ₹2.55 trillion in a single year on fertilizer subsidies. It has moderated to ₹1.64 trillion in FY25, but any global price spike immediately reverses that. The government cannot keep urea at ₹242 indefinitely — but reforming it is politically explosive. When reform comes, it will reshape the entire sector overnight.</div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-card-icon">🌱</div>
+        <div class="risk-card-title">The soil is being quietly destroyed</div>
+        <div class="risk-card-body">Decades of subsidised urea overuse has degraded soil organic carbon, disrupted microbial ecosystems, and compacted soil structure across India's most productive farming land. The long-term cost of soil rehabilitation may exceed the short-term savings from cheap nitrogen. This is the slow-moving crisis that makes the shift to biofertilizers and balanced nutrition not just a business opportunity but a necessity.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <div class="section">
+    <div class="section-label">The Road Ahead</div>
+    <h2 class="section-title">What Happens Next — 3 Horizons</h2>
+    <div class="horizon-row">
+      <div class="horizon-label near">Now<br>2025–2026</div>
+      <div class="horizon-content">
+        <ul>
+          <li>India achieves near self-sufficiency in urea — new domestic capacity coming online reduces import volumes.</li>
+          <li>IFFCO scales Nano DAP to 2 lakh bottles/day from two new UP plants.</li>
+          <li>Saudi Arabia's 5-year Maaden agreement insulates DAP supply through FY2030.</li>
+          <li>NBS rates revised semi-annually — monitor for budget overruns if global prices spike.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="horizon-row">
+      <div class="horizon-label mid">Soon<br>2026–2030</div>
+      <div class="horizon-content">
+        <ul>
+          <li>Nano-urea expected to reach 20–25% of urea-equivalent volumes — material subsidy relief.</li>
+          <li>Pressure mounts to include urea in NBS framework. If it happens, it's the biggest structural event in decades.</li>
+          <li>Biofertilizer and water-soluble segments grow at 2–3x the market average rate.</li>
+          <li>Sector consolidation: smaller manufacturers squeezed out by subsidy payment delays and working capital pressure.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="horizon-row">
+      <div class="horizon-label long">Later<br>2030 and Beyond</div>
+      <div class="horizon-content">
+        <ul>
+          <li>Digital soil health prescriptions reshape what farmers buy — demand becomes more targeted, less commodity-driven.</li>
+          <li>India explores alternative potassium sources (sea minerals, industrial by-products) to reduce 100% import dependency.</li>
+          <li>India potentially becomes an exporter of specialty fertilizers to ASEAN and Africa.</li>
+          <li>International sustainability standards on nitrogen use may force earlier-than-expected transition away from conventional urea.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>India's fertilizer market is not merely growing — it is transforming. The convergence of fiscal pressure on legacy subsidies, technological disruption from nano-formulations, and the Atmanirbhar Bharat self-sufficiency agenda creates a sector at a genuine inflection point. The decade ahead will likely determine whether India transitions from structurally import-dependent and subsidy-distorted to balanced, technologically advanced, and increasingly self-sufficient.</p>
+    </div>
+  </div>
+
+  <hr>
+  <footer>
+    <div>India Fertilizer Market — Executive Summary<br>April 2026 · For internal use only</div>
+    <div style="text-align:right">Sources: Ministry of Chemicals &amp; Fertilizers · PIB India<br>IMARC Group · Mordor Intelligence · MarkNtel Advisors</div>
+  </footer>
+
+</main>
+</body>
+</html>
