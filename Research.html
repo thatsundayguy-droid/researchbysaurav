@@ -181,6 +181,74 @@
 
   .footer-bar { background: var(--bark); color: rgba(245,237,214,0.5); text-align: center; padding: 20px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; }
   .divider { height: 1px; background: var(--parchment); margin: 48px 0 40px; }
+
+  /* ══ MOBILE FIXES ══ */
+  html, body { overflow-x: hidden; width: 100%; }
+  .hero { overflow: hidden; width: 100%; }
+
+  @media (max-width: 640px) {
+    /* NAV — hide brand, show only links */
+    .site-nav { padding: 0 12px; height: 48px; }
+    .nav-brand { display: none; }
+    .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 9px; padding: 5px 10px; letter-spacing: 0.5px; white-space: nowrap; }
+
+    /* HERO */
+    .hero { padding: 24px 16px 28px; }
+    .hero::before { display: none; }
+    .hero h1 { font-size: 32px; max-width: 100%; }
+    .hero-sub { font-size: 13px; margin-top: 12px; max-width: 100%; }
+    .hero-eyebrow { font-size: 9px; letter-spacing: 2px; }
+
+    /* HERO STATS — 2x2 grid */
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .hstat { border-left: 2px solid var(--lime); padding-left: 12px; }
+    .hstat-num { font-size: 24px; }
+    .hstat-label { font-size: 9px; }
+
+    /* GENERAL */
+    .page { padding: 0 16px 60px; }
+    .section-title { font-size: 20px; }
+    .section-desc { font-size: 13px; }
+    .divider { margin: 28px 0 20px; }
+
+    /* VETERAN BOX */
+    .veteran-box { padding: 18px 16px; margin: 20px 0; }
+    .veteran-box p { font-size: 13.5px; line-height: 1.75; }
+    .veteran-box::before { font-size: 48px; right: 16px; }
+
+    /* SEGMENT CARDS */
+    .segment-grid { grid-template-columns: 1fr !important; }
+    .seg-card { padding: 18px; }
+    .seg-name { font-size: 17px; }
+
+    /* OPPORTUNITY TABLE — horizontal scroll */
+    .opp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
+    .opp-table { min-width: 540px; margin-bottom: 0; font-size: 12px; }
+    .opp-table thead th { font-size: 9px; padding: 6px 10px; }
+    .opp-table tbody td { padding: 10px; }
+
+    /* BAR CHART */
+    .bar-row { gap: 8px; }
+    .bar-label { min-width: 80px; font-size: 10px; text-align: left; }
+    .bar-fill { font-size: 9px; }
+
+    /* REGION CARDS */
+    .region-grid { grid-template-columns: 1fr !important; }
+    .reg-card { padding: 18px; }
+    .reg-name { font-size: 18px; }
+    .reg-facts li { font-size: 12px; }
+
+    /* GRIDS → single column */
+    .watch-grid { grid-template-columns: 1fr !important; }
+    .path-grid { grid-template-columns: 1fr !important; }
+
+    /* KEY NUMBERS — 2x2 on mobile */
+    div[style*="repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+
+    .footer-bar { font-size: 9px; padding: 14px 16px; letter-spacing: 0.5px; }
+  }
+
 </style>
 </head>
 <body>
@@ -244,7 +312,7 @@
   <div class="section-title">8 Specific Opportunities — Ranked</div>
   <p class="section-desc">These are real entry points ranked by attractiveness for a new business with limited capital but a serious team.</p>
 
-  <table class="opp-table">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:24px"><table class="opp-table" style="margin-bottom:0">
     <thead><tr><th>#</th><th>Opportunity</th><th>Capital Needed</th><th>Margin Profile</th><th>Competition</th><th>Verdict</th></tr></thead>
     <tbody>
       <tr><td><b>1</b></td><td><div class="opp-name">Biofertilizer Manufacturing (India/SE Asia)</div><div class="opp-sub">Liquid/granular nitrogen-fixing or PSB products for smallholder farmers</div></td><td><span class="pill pill-green">$50K–$300K</span></td><td><span class="pill pill-green">35–55%</span></td><td><span class="pill pill-green">Fragmented</span></td><td><span class="pill pill-green">🔥 Top Pick</span></td></tr>
@@ -256,7 +324,7 @@
       <tr><td><b>7</b></td><td><div class="opp-name">Nano Fertilizer Distribution (India)</div><div class="opp-sub">Partner with IFFCO or similar; distribute nano urea/nano DAP as sub-dealer</div></td><td><span class="pill pill-green">$20K–$100K</span></td><td><span class="pill pill-amber">15–25%</span></td><td><span class="pill pill-amber">Growing fast</span></td><td><span class="pill pill-amber">⚠ Early Stage</span></td></tr>
       <tr><td><b>8</b></td><td><div class="opp-name">Slow-Release / Controlled-Release</div><div class="opp-sub">Polymer-coated NPK; sold to golf courses, landscape, large farms</div></td><td><span class="pill pill-red">$500K–$2M</span></td><td><span class="pill pill-green">50–70%</span></td><td><span class="pill pill-amber">Moderate</span></td><td><span class="pill pill-amber">⚠ Capital Heavy</span></td></tr>
     </tbody>
-  </table>
+  </table></div>
 
   <div class="divider"></div>
   <div class="section-label">Section 03</div>

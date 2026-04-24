@@ -191,6 +191,90 @@
   .check-list li::before { content: '☐'; color: var(--leaf); font-size: 14px; flex-shrink: 0; margin-top: 1px; }
 
   footer { background: var(--deep); color: rgba(255,255,255,0.3); text-align: center; padding: 22px; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 1.5px; }
+
+  /* ══ MOBILE FIXES ══ */
+  html, body { overflow-x: hidden; width: 100%; }
+
+  /* Fix hero white gap — emoji pseudo element causes overflow */
+  .hero { overflow: hidden; width: 100%; }
+  .hero::after { pointer-events: none; }
+
+  /* Investment table — scrollable on mobile */
+  .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+  @media (max-width: 640px) {
+    /* NAV — hide brand on mobile, show only links */
+    .site-nav { padding: 0 12px; height: 48px; }
+    .nav-brand { display: none; }
+    .nav-links { gap: 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 9px; padding: 5px 10px; letter-spacing: 0.5px; white-space: nowrap; }
+
+    /* HERO — fix white gap by removing emoji & tightening padding */
+    .hero { padding: 24px 16px 28px; overflow: hidden; }
+    .hero::after { display: none; }
+    .hero h1 { font-size: 32px; max-width: 100%; }
+    .hero-sub { font-size: 13px; margin-top: 12px; max-width: 100%; }
+    .tag { font-size: 9px; padding: 4px 10px; }
+
+    /* HERO STATS — 2x2 grid */
+    .hero-nums { margin-top: 24px; padding-top: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .hnum { padding-right: 0; margin-right: 0; border-right: none; }
+    .hnum:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); padding-right: 12px; }
+    .hnum-val { font-size: 22px; }
+    .hnum-lab { font-size: 9px; }
+
+    /* GENERAL */
+    .wrap { padding: 0 16px 60px; }
+    .sec-h { font-size: 20px; }
+    .sec-p { font-size: 13px; }
+    .divider { margin: 28px 0 20px; }
+
+    /* CALLOUT */
+    .callout { padding: 18px 16px; margin: 20px 0; }
+    .callout p { font-size: 13px; line-height: 1.7; }
+
+    /* PATH CARDS */
+    .path { padding: 18px; }
+    .path-name { font-size: 15px; }
+    .path-desc { font-size: 12px; }
+
+    /* INVESTMENT TABLE — horizontal scroll */
+    .inv-table { font-size: 12px; min-width: 560px; }
+    .inv-table thead th { font-size: 9px; padding: 6px 10px; }
+    .inv-table td { padding: 10px; }
+    .item-name { font-size: 12px; }
+    .item-sub { font-size: 10px; }
+    .inr { font-size: 11px; }
+
+    /* MARGIN BARS */
+    .marg-row { flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 14px; }
+    .marg-label { min-width: unset; text-align: left; font-size: 10px; }
+    .marg-bar { width: 100%; }
+
+    /* REGULATORY STEPS */
+    .reg-steps::before { left: 18px; }
+    .reg-num { width: 36px; height: 36px; font-size: 12px; flex-shrink: 0; }
+    .reg-step { gap: 12px; }
+    .reg-title { font-size: 13px; }
+    .reg-desc { font-size: 12px; }
+
+    /* GRIDS → single column */
+    .policy-grid { grid-template-columns: 1fr !important; }
+    .warn-grid { grid-template-columns: 1fr !important; }
+    .check-grid { grid-template-columns: 1fr !important; }
+
+    /* INDUSTRY CATEGORY 3-col box */
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+
+    /* STATE CHIPS */
+    .state-row { gap: 8px; }
+    .state-chip { min-width: unset; flex: 1 1 calc(50% - 8px); padding: 10px 12px; }
+    .state-name { font-size: 13px; }
+    .state-why { font-size: 10px; }
+
+    footer { font-size: 9px; padding: 14px 16px; letter-spacing: 0.5px; }
+  }
+
 </style>
 </head>
 <body>
@@ -285,7 +369,7 @@
   <div class="sec-h">Investment Breakdown — INR Reality Check</div>
   <p class="sec-p">Everything converted to INR, broken down by item. Use this to have an honest conversation with your co-founder about capital needs.</p>
 
-  <table class="inv-table">
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:24px"><table class="inv-table" style="margin-bottom:0">
     <thead>
       <tr>
         <th>Cost Head</th><th>Biofertilizer Unit</th><th>Specialty Blend Unit</th><th>Organic/Compost Unit</th><th>Priority</th>
