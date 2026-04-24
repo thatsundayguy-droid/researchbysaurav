@@ -554,9 +554,77 @@
     }
     footer div:last-child { text-align: left; }
   }
+  /* ── NAV ── */
+  .site-nav {
+    background: var(--accent-dark);
+    border-bottom: 1px solid rgba(168,200,178,0.2);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-brand {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(240,236,228,0.4);
+    white-space: nowrap;
+  }
+  .nav-links { display: flex; gap: 4px; overflow-x: auto; }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(240,236,228,0.45);
+    white-space: nowrap;
+    border: 1px solid transparent;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-link:hover { background: rgba(168,200,178,0.1); color: #a8c8b2; }
+  .nav-link.active { background: rgba(168,200,178,0.15); color: #a8c8b2; border-color: rgba(168,200,178,0.25); }
+
+  @media (max-width: 640px) {
+    .site-nav { padding: 0 12px; height: 48px; }
+    .nav-brand { display: none; }
+    .nav-links { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .nav-link { font-size: 9px; padding: 5px 10px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- AUTO NAV -->
+<nav class="site-nav">
+  <div class="nav-brand">🌿 Fertilizer Research</div>
+  <div class="nav-links" id="nav-links"></div>
+</nav>
+<script>
+  fetch('pages.json')
+    .then(r => r.json())
+    .then(pages => {
+      const current = location.pathname.split('/').pop() || 'Research.html';
+      const container = document.getElementById('nav-links');
+      container.innerHTML = pages.map(p =>
+        `<a href="${p.file}" class="nav-link${current === p.file ? ' active' : ''}">${p.emoji} ${p.title}</a>`
+      ).join('');
+    })
+    .catch(() => {
+      document.getElementById('nav-links').innerHTML =
+        '<a href="Research.html" class="nav-link active">📄 Sector Report</a>';
+    });
+</script>
 
 <!-- COVER PAGE -->
 <div class="cover">
