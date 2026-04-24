@@ -1,5 +1,6 @@
 [
-  { "title": "Indian Fertilizer Market", "file": "Index.html"},
-  { "title": "Sector Report", "file": "Research.html"},
-  { "title": "Summary", "file": "Summary.html"}
+ 	{ "title": "Summary", "file": "Summary.html"}  
+	{ "title": "Indian Fertilizer Market", "file": "Index.html"},
+  	{ "title": "Detailed Report", "file": "Research.html"},
+ 
 ]
